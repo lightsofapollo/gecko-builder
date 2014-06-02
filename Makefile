@@ -11,6 +11,9 @@ gecko-base:
 gecko-builder:
 	docker build -t $(TARGET)/gecko-builder:$(VERSION) builder/
 
+gecko-b2g-builder:
+	docker build -t $(TARGET)/b2g-build:$(VERSION) b2g-build/
+
 gecko-tester:
 	docker build -t $(TARGET)/gecko-tester:$(VERSION) tester/
 

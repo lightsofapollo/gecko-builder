@@ -1,0 +1,1 @@
+Bug 1014914 - Add developer config for b2g/desktop_automation_config.py. r=aki

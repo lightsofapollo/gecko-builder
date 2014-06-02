@@ -1,0 +1,119 @@
+diff -r 6d39fa1de4b1 scripts/b2g_build.py
+--- a/scripts/b2g_build.py	Tue May 27 16:39:00 2014 -0400
++++ b/scripts/b2g_build.py	Wed May 28 23:47:56 2014 -0700
+@@ -135,16 +135,21 @@
+         [["--repotool-revision"], {
+             "dest": "repo_rev",
+             "help": "which revision of repo tool to use",
+         }],
+         [["--complete-mar-url"], {
+             "dest": "complete_mar_url",
+             "help": "the URL where the complete MAR was uploaded. Required if submit-to-balrog is requested and upload isn't.",
+         }],
++        [["--disable-mock"], {
++            "dest": "disable_mock",
++            "action": "store_true",
++            "help": "Disable mock even when configured otherwise",
++        }],
+     ]
+ 
+     def __init__(self, require_config_file=False):
+         self.gecko_config = None
+         self.buildid = None
+         self.dotconfig = None
+         LocalesMixin.__init__(self)
+         BaseScript.__init__(self,
+@@ -215,16 +220,22 @@
+         if self.config.get("update_type", "ota") == "fota":
+             self.make_updates_cmd = ['./build.sh', 'gecko-update-fota']
+             self.extra_update_attrs = 'isOsUpdate="true"'
+         else:
+             self.make_updates_cmd = ['./build.sh', 'gecko-update-full']
+             self.extra_update_attrs = None
+         self.package_urls = {}
+ 
++    def _mock_enabled(self, gecko_config):
++        if self.config.get('disable_mock') is True:
++            return False
++
++        return 'mock_target' in gecko_config
++
+     def _pre_config_lock(self, rw_config):
+         super(B2GBuild, self)._pre_config_lock(rw_config)
+ 
+         if self.buildbot_config is None:
+             self.info("Reading buildbot build properties...")
+             self.read_buildbot_config()
+ 
+         if 'target' not in self.config:
+@@ -951,17 +962,17 @@
+             env['L10NBASEDIR'] = dirs['abs_l10n_dir']
+             env['MOZ_CHROME_MULTILOCALE'] = " ".join(self.query_locales())
+             if 'PATH' not in env:
+                 env['PATH'] = os.environ.get('PATH')
+             env['PATH'] += ':%s' % os.path.join(dirs['compare_locales_dir'], 'scripts')
+             env['PYTHONPATH'] = os.environ.get('PYTHONPATH', '')
+             env['PYTHONPATH'] += ':%s' % os.path.join(dirs['compare_locales_dir'], 'lib')
+ 
+-        if 'mock_target' in gecko_config:
++        if self._mock_enabled(gecko_config):
+             # initialize mock
+             self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+             if self.config['ccache']:
+                 self.run_mock_command(gecko_config['mock_target'], 'ccache -z', cwd=dirs['work_dir'], env=env)
+ 
+             for cmd in cmds:
+                 retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+                 if retval != 0:
+@@ -989,48 +1000,48 @@
+         gecko_config = self.load_gecko_config()
+         if gecko_config.get('config_version', 0) < 1:
+             self.info("Skipping build_symbols for old configuration")
+             return
+ 
+         cmd = ['./build.sh', 'buildsymbols']
+         env = self.query_build_env()
+ 
+-        if 'mock_target' in gecko_config:
++        if self._mock_enabled(gecko_config):
+             # initialize mock
+             self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+             retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+         else:
+             retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+ 
+         if retval != 0:
+             self.fatal("failed to build symbols", exit_code=2)
+ 
+         if self.query_is_nightly():
+             # Upload symbols
+             self.info("Uploading symbols")
+             cmd = ['./build.sh', 'uploadsymbols']
+-            if 'mock_target' in gecko_config:
++            if self._mock_enabled(gecko_config):
+                 retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+             else:
+                 retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+ 
+             if retval != 0:
+                 self.fatal("failed to upload symbols", exit_code=2)
+ 
+     def make_updates(self):
+         if not self.query_is_nightly():
+             self.info("Not a nightly build. Skipping...")
+             return
+         dirs = self.query_abs_dirs()
+         gecko_config = self.load_gecko_config()
+         cmd = self.make_updates_cmd[:]
+         env = self.query_build_env()
+ 
+-        if 'mock_target' in gecko_config:
++        if self._mock_enabled('mock_target'):
+             # initialize mock
+             self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+             retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+         else:
+             retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+ 
+         if retval != 0:
+             self.fatal("failed to create complete update", exit_code=2)

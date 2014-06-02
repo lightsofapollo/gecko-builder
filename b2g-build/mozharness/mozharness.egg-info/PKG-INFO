@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mozharness
+Version: 0.7
+Summary: Mozharness is a configuration-driven script harness with full logging that allows production infrastructure and individual developers to use the same scripts. 
+Home-page: https://hg.mozilla.org/build/mozharness/
+Author: Aki Sasaki
+Author-email: aki@mozilla.com
+License: MPL
+Description: UNKNOWN
+Platform: UNKNOWN

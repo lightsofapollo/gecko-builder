@@ -1,0 +1,91 @@
+# HG changeset patch
+# User shelve@localhost
+# Date 1401335538 25200
+#      Wed May 28 20:52:18 2014 -0700
+# Node ID 79ffafd60eb670a133ed0c92175a4890811af469
+# Parent  6d39fa1de4b1d5b1ca1b2fa391e6e5d9cf30d800
+Bug 1014914 - Add developer config for b2g/desktop_automation_config.py. r=aki
+
+diff --git a/mozharness/base/vcs/gittool.py b/mozharness/base/vcs/gittool.py
+--- a/mozharness/base/vcs/gittool.py
++++ b/mozharness/base/vcs/gittool.py
+@@ -59,8 +59,10 @@
+         revision = c.get('revision')
+         branch = c.get('branch')
+         clean = c.get('clean')
+-        share_base = c.get('vcs_share_base', os.environ.get("GIT_SHARE_BASE_DIR", None))
++        #share_base = c.get('vcs_share_base', os.environ.get("GIT_SHARE_BASE_DIR", None))
++        share_base =  os.environ.get('GIT_SHARE_BASE_DIR')
+         env = {'PATH': os.environ.get('PATH')}
++        print share_base
+         if share_base is not None:
+             env['GIT_SHARE_BASE_DIR'] = share_base
+ 
+@@ -78,6 +80,9 @@
+             cmd.extend(['--mirror', mirror_url])
+ 
+         cmd.extend([repo, dest])
++        print '--- git tool ---'
++        print cmd
++        print '--- git tool ---'
+         parser = GittoolParser(config=self.config, log_obj=self.log_obj,
+                                error_list=GitErrorList)
+         retval = self.run_command(cmd, error_list=GitErrorList, env=env, output_parser=parser)
+diff --git a/scripts/b2g_build.py b/scripts/b2g_build.py
+--- a/scripts/b2g_build.py
++++ b/scripts/b2g_build.py
+@@ -570,7 +570,10 @@
+ 
+             if b2g_manifest_intree:
+                 # Checkout top-level B2G repo now
++                print 'XFOO'
++                print repos
+                 self.vcs_checkout_repos(repos)
++                print 'XFOONO'
+                 b2g_manifest_branch = 'master'
+ 
+                 # Now checkout gecko inside the build directory
+@@ -745,6 +748,7 @@
+         self.set_buildbot_property('gecko_revision', rev, write_to_file=True)
+ 
+     def download_blobs(self):
++        return
+         dirs = self.query_abs_dirs()
+         gecko_config = self.load_gecko_config()
+         if 'tooltool_manifest' in gecko_config:
+@@ -956,27 +960,14 @@
+             env['PYTHONPATH'] = os.environ.get('PYTHONPATH', '')
+             env['PYTHONPATH'] += ':%s' % os.path.join(dirs['compare_locales_dir'], 'lib')
+ 
+-        if 'mock_target' in gecko_config:
+-            # initialize mock
+-            self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+-            if self.config['ccache']:
+-                self.run_mock_command(gecko_config['mock_target'], 'ccache -z', cwd=dirs['work_dir'], env=env)
+-
+-            for cmd in cmds:
+-                retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+-                if retval != 0:
+-                    break
+-            if self.config['ccache']:
+-                self.run_mock_command(gecko_config['mock_target'], 'ccache -s', cwd=dirs['work_dir'], env=env)
+-        else:
+-            if self.config['ccache']:
+-                self.run_command('ccache -z', cwd=dirs['work_dir'], env=env)
+-            for cmd in cmds:
+-                retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+-                if retval != 0:
+-                    break
+-            if self.config['ccache']:
+-                self.run_command('ccache -s', cwd=dirs['work_dir'], env=env)
++        if self.config['ccache']:
++            self.run_command('ccache -z', cwd=dirs['work_dir'], env=env)
++        for cmd in cmds:
++            retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
++            if retval != 0:
++                break
++        if self.config['ccache']:
++            self.run_command('ccache -s', cwd=dirs['work_dir'], env=env)
+ 
+         if retval != 0:
+             self.fatal("failed to build", exit_code=2)

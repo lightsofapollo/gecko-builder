@@ -1,0 +1,6 @@
+virtualenv
+mock
+coverage
+nose
+pylint
+pyflakes

@@ -1,0 +1,1751 @@
+00:50:39     INFO - MultiFileLogger online at 20140528 00:50:39 in /Users/mozilla/workspace/mozharness
+00:50:39     INFO - Reading buildbot build properties...
+00:50:39     INFO - buildbot_json_path is not set.  Skipping...
+00:50:39     INFO - Run as ./scripts/b2g_build.py --work-dir=workspace --target=emulator --b2g-config-dir=emulator-ics --repo https://hg.mozilla.org/mozilla-central/
+00:50:39     INFO - Dumping config to /Users/mozilla/workspace/mozharness/logs/localconfig.json.
+00:50:39     INFO - {'append_to_log': False,
+00:50:39     INFO -  'b2g_config_dir': 'emulator-ics',
+00:50:39     INFO -  'balrog_credentials_file': 'oauth.txt',
+00:50:39     INFO -  'base_work_dir': '/Users/mozilla/workspace/mozharness',
+00:50:39     INFO -  'buildbot_json_path': None,
+00:50:39     INFO -  'ccache': True,
+00:50:39     INFO -  'compare_locales_repo': 'https://hg.mozilla.org/build/compare-locales',
+00:50:39     INFO -  'compare_locales_rev': 'RELEASE_AUTOMATION',
+00:50:39     INFO -  'compare_locales_vcs': 'hgtool',
+00:50:39     INFO -  'default_vcs': 'hgtool',
+00:50:39     INFO -  'ignore_locales': ('en-US', 'multi'),
+00:50:39     INFO -  'l10n_dir': 'gecko-l10n',
+00:50:39     INFO -  'locales_dir': 'gecko/b2g/locales',
+00:50:39     INFO -  'locales_file': 'gecko/b2g/locales/all-locales',
+00:50:39     INFO -  'log_level': 'info',
+00:50:39     INFO -  'log_to_console': True,
+00:50:39     INFO -  'merge_locales': True,
+00:50:39     INFO -  'mozilla_dir': 'build/gecko',
+00:50:39     INFO -  'objdir': 'build/objdir-gecko',
+00:50:39     INFO -  'opt_config_files': (),
+00:50:39     INFO -  'repo': 'https://hg.mozilla.org/mozilla-central/',
+00:50:39     INFO -  'repo_remote_mappings': {},
+00:50:39     INFO -  'repo_repo': 'https://git.mozilla.org/external/google/gerrit/git-repo.git',
+00:50:39     INFO -  'repo_rev': 'stable',
+00:50:39     INFO -  'target': 'emulator',
+00:50:39     INFO -  'tools_repo': 'https://hg.mozilla.org/build/tools',
+00:50:39     INFO -  'tooltool_servers': None,
+00:50:39     INFO -  'update_channel': 'default',
+00:50:39     INFO -  'vcs_share_base': None,
+00:50:39     INFO -  'volatile_config': {'actions': None, 'add_actions': None, 'no_actions': None},
+00:50:39     INFO -  'work_dir': 'workspace'}
+00:50:39     INFO - #####
+00:50:39     INFO - ##### Skipping clobber step.
+00:50:39     INFO - #####
+00:50:39     INFO - #####
+00:50:39     INFO - ##### Running checkout-sources step.
+00:50:39     INFO - #####
+00:50:39     INFO - Running main action method: checkout_sources
+00:50:39     INFO - Getting output from command: ['hg', 'parent', '--template', '{node|short}'] in workspace/gecko
+00:50:39     INFO - Copy/paste: hg parent --template {node|short}
+00:50:39     INFO - Reading from file tmpfile_stdout
+00:50:39     INFO - Output received:
+00:50:39     INFO -  448f2153d6d3
+00:50:39     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:50:39     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:50:39     INFO - retry: Calling <bound method B2GBuild.load_json_from_url of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: ('https://hg.mozilla.org/mozilla-central//raw-file/448f2153d6d3/b2g/config/emulator-ics/config.json',), kwargs: {}, attempt #1
+00:50:39     INFO - Changing directory to /Users/mozilla/workspace/mozharness/workspace.
+00:50:39     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.gittool.GittoolVCS object at 0x10e820490>, '/Users/mozilla/workspace/mozharness/workspace'), kwargs: {}, attempt #1
+00:50:39     INFO - Running command: ['gittool.py', 'https://git.mozilla.org/b2g/B2G.git', '/Users/mozilla/workspace/mozharness/workspace']
+00:50:39     INFO - Copy/paste: gittool.py https://git.mozilla.org/b2g/B2G.git /Users/mozilla/workspace/mozharness/workspace
+00:50:39     INFO - Using env: {'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin'}
+00:50:39     INFO -  2014-05-28 00:50:39,645 Checking dest /Users/mozilla/workspace/mozharness/workspace
+00:50:39     INFO -  2014-05-28 00:50:39,649 command: START
+00:50:39     INFO -  2014-05-28 00:50:39,649 command: git fetch -q https://git.mozilla.org/b2g/B2G.git +refs/heads/*:refs/remotes/origin/*
+00:50:39     INFO -  2014-05-28 00:50:39,649 command: cwd: /Users/mozilla/workspace/mozharness/workspace
+00:50:39     INFO -  2014-05-28 00:50:39,650 command: output:
+00:50:40     INFO -  2014-05-28 00:50:40,409 command: END (0.76s elapsed)
+00:50:40     INFO -  2014-05-28 00:50:40,413 Updating local copy refname: None; revision: None
+00:50:40     INFO -  2014-05-28 00:50:40,413 command: START
+00:50:40     INFO -  2014-05-28 00:50:40,413 command: git checkout -q -f origin/master^0
+00:50:40     INFO -  2014-05-28 00:50:40,413 command: cwd: /Users/mozilla/workspace/mozharness/workspace
+00:50:40     INFO -  2014-05-28 00:50:40,413 command: output:
+00:50:40     INFO -  2014-05-28 00:50:40,417 command: END (0.00s elapsed)
+00:50:40     INFO -  Got revision 3fdf2ece624d6fc0b67f81f38b017d80053d2fdf
+00:50:40     INFO - Return code: 0
+00:50:40     INFO - Changing directory to /Users/mozilla/workspace/mozharness.
+00:50:40     INFO - Getting output from command: ['hg', 'parent', '--template', '{node|short}'] in workspace/gecko
+00:50:40     INFO - Copy/paste: hg parent --template {node|short}
+00:50:40     INFO - Reading from file tmpfile_stdout
+00:50:40     INFO - Output received:
+00:50:40     INFO -  448f2153d6d3
+00:50:40     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:50:40     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:50:40     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.hgtool.HgtoolVCS object at 0x10e820e10>, 'workspace/gecko'), kwargs: {}, attempt #1
+00:50:40     INFO - Running command: ['hgtool.py', '-r', '448f2153d6d3', 'https://hg.mozilla.org/mozilla-central/', '/Users/mozilla/workspace/mozharness/workspace/gecko']
+00:50:40     INFO - Copy/paste: hgtool.py -r 448f2153d6d3 https://hg.mozilla.org/mozilla-central/ /Users/mozilla/workspace/mozharness/workspace/gecko
+00:50:40     INFO - Using env: {'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin'}
+00:50:40     INFO -  Reporting hg version in use
+00:50:40     INFO -  command: START
+00:50:40     INFO -  command: hg -q version
+00:50:40     INFO -  command: cwd: .
+00:50:40     INFO -  command: output:
+00:50:40     INFO -  Mercurial Distributed SCM (version 2.9.2)
+00:50:40     INFO -  command: END (0.04s elapsed)
+00:50:40     INFO -  command: START
+00:50:40     INFO -  command: hg path default
+00:50:40     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/gecko
+00:50:40     INFO -  command: output:
+00:50:40     INFO -  https://hg.mozilla.org/mozilla-central/
+00:50:40     INFO -  command: END (0.05 elapsed)
+00:50:40     INFO -  command: START
+00:50:40     INFO -  command: hg pull -r 448f2153d6d3 https://hg.mozilla.org/mozilla-central/
+00:50:40     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/gecko
+00:50:40     INFO -  command: output:
+00:50:40     INFO -  warning: hg.mozilla.org certificate with fingerprint af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27 not verified (check hostfingerprints or web.cacerts config setting)
+00:50:41     INFO -  pulling from https://hg.mozilla.org/mozilla-central/
+00:50:41     INFO -  no changes found
+00:50:41     INFO -  command: END (0.43s elapsed)
+00:50:41     INFO -  command: START
+00:50:41     INFO -  command: hg update -C -r 448f2153d6d3
+00:50:41     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/gecko
+00:50:41     INFO -  command: output:
+00:50:42     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:50:42     INFO -  command: END (1.42s elapsed)
+00:50:42     INFO -  command: START
+00:50:42     INFO -  command: hg parent --template {node|short}
+00:50:42     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/gecko
+00:50:42     INFO -  command: output:
+00:50:42     INFO -  448f2153d6d3
+00:50:42     INFO -  command: END (0.06 elapsed)
+00:50:42     INFO -  Got revision 448f2153d6d3
+00:50:42     INFO - Return code: 0
+00:50:42     INFO - Setting buildbot property revision to 448f2153d6d3
+00:50:42     INFO - Writing buildbot properties ['revision'] to /Users/mozilla/workspace/mozharness/properties/revision
+00:50:42     INFO - Writing to file /Users/mozilla/workspace/mozharness/properties/revision
+00:50:42     INFO - Contents:
+00:50:42     INFO -  revision:448f2153d6d3
+00:50:42     INFO - Setting buildbot property gecko_revision to 448f2153d6d3
+00:50:42     INFO - Writing buildbot properties ['gecko_revision'] to /Users/mozilla/workspace/mozharness/properties/gecko_revision
+00:50:42     INFO - Writing to file /Users/mozilla/workspace/mozharness/properties/gecko_revision
+00:50:42     INFO - Contents:
+00:50:42     INFO -  gecko_revision:448f2153d6d3
+00:50:42     INFO - Using manifest at workspace/gecko/b2g/config/emulator-ics/sources.xml
+00:50:42     INFO - rmtree: /Users/mozilla/workspace/mozharness/workspace/tmp_manifest
+00:50:42     INFO - retry: Calling <function rmtree at 0x10e7950c8> with args: ('/Users/mozilla/workspace/mozharness/workspace/tmp_manifest',), kwargs: {}, attempt #1
+00:50:42     INFO - mkdir: /Users/mozilla/workspace/mozharness/workspace/tmp_manifest
+00:50:42     INFO - Writing manifest to /Users/mozilla/workspace/mozharness/workspace/tmp_manifest/emulator.xml
+00:50:42     INFO - Checking out repo tool
+00:50:42     INFO - Changing directory to /Users/mozilla/workspace/mozharness/workspace.
+00:50:42     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.gittool.GittoolVCS object at 0x10ec26a50>, '/Users/mozilla/workspace/mozharness/workspace/.repo/repo'), kwargs: {}, attempt #1
+00:50:42     INFO - Running command: ['gittool.py', '-r', 'stable', 'https://git.mozilla.org/external/google/gerrit/git-repo.git', '/Users/mozilla/workspace/mozharness/workspace/.repo/repo']
+00:50:42     INFO - Copy/paste: gittool.py -r stable https://git.mozilla.org/external/google/gerrit/git-repo.git /Users/mozilla/workspace/mozharness/workspace/.repo/repo
+00:50:42     INFO - Using env: {'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin'}
+00:50:42     INFO -  2014-05-28 00:50:42,601 Checking dest /Users/mozilla/workspace/mozharness/workspace/.repo/repo
+00:50:42     INFO -  2014-05-28 00:50:42,608 command: START
+00:50:42     INFO -  2014-05-28 00:50:42,608 command: git fetch -q https://git.mozilla.org/external/google/gerrit/git-repo.git +refs/heads/*:refs/remotes/origin/*
+00:50:42     INFO -  2014-05-28 00:50:42,608 command: cwd: /Users/mozilla/workspace/mozharness/workspace/.repo/repo
+00:50:42     INFO -  2014-05-28 00:50:42,608 command: output:
+00:50:42     INFO -  2014-05-28 00:50:42,940 command: END (0.33s elapsed)
+00:50:42     INFO -  2014-05-28 00:50:42,943 Updating local copy refname: None; revision: stable
+00:50:42     INFO -  2014-05-28 00:50:42,950 Using stable as ref name instead of revision
+00:50:42     INFO -  2014-05-28 00:50:42,950 command: START
+00:50:42     INFO -  2014-05-28 00:50:42,950 command: git checkout -q -f origin/stable^0
+00:50:42     INFO -  2014-05-28 00:50:42,950 command: cwd: /Users/mozilla/workspace/mozharness/workspace/.repo/repo
+00:50:42     INFO -  2014-05-28 00:50:42,950 command: output:
+00:50:42     INFO -  2014-05-28 00:50:42,954 command: END (0.00s elapsed)
+00:50:42     INFO -  Got revision 666d534636d262cbfd971509dd0f0be0cddb2e11
+00:50:42     INFO - Return code: 0
+00:50:42     INFO - Changing directory to /Users/mozilla/workspace/mozharness.
+00:50:42     INFO - Running command: ['./repo', '--version'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:42     INFO - Copy/paste: ./repo --version
+00:50:43     INFO -  repo version v1.12.16
+00:50:43     INFO -         (from https://git.mozilla.org/external/google/gerrit/git-repo.git)
+00:50:43     INFO -  repo launcher version 1.21
+00:50:43     INFO -         (from /Users/mozilla/workspace/mozharness/workspace/repo)
+00:50:43     INFO -  git version 1.9.2
+00:50:43     INFO -  Python 2.7.6 (default, Apr  9 2014, 11:48:52)
+00:50:43     INFO -  [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.38)]
+00:50:43     INFO - Return code: 0
+00:50:43     INFO - Deleting broken projects...
+00:50:43     INFO - Running command: ['./repo', 'forall', '-c', 'git show-ref -q --head HEAD || rm -rfv $PWD'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:43     INFO - Copy/paste: ./repo forall -c "git show-ref -q --head HEAD || rm -rfv $PWD"
+00:50:45     INFO - Return code: 0
+00:50:45     INFO - Running command: ['./config.sh', '-q', 'emulator', '/Users/mozilla/workspace/mozharness/workspace/tmp_manifest/emulator.xml'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:45     INFO - Copy/paste: ./config.sh -q emulator /Users/mozilla/workspace/mozharness/workspace/tmp_manifest/emulator.xml
+00:50:45     INFO - Calling ['./config.sh', '-q', 'emulator', '/Users/mozilla/workspace/mozharness/workspace/tmp_manifest/emulator.xml'] with output_timeout 3300
+00:50:45     INFO -  Initialized empty Git repository in /Users/mozilla/workspace/mozharness/workspace/tmp_manifest_repo/.git/
+00:50:45     INFO -  [master (root-commit) c450ddb] manifest
+00:50:45     INFO -   1 file changed, 108 insertions(+)
+00:50:45     INFO -   create mode 100644 emulator.xml
+00:50:45     INFO -  Get tmp_manifest_repo
+00:50:45     INFO -  From tmp_manifest_repo
+00:50:45     INFO -   * [new branch]      master     -> origin/master
+00:50:45     INFO -  repo has been initialized in /Users/mozilla/workspace/mozharness/workspace
+00:50:47     INFO -  info: A new version of repo is available
+00:50:47     INFO -  warning: project 'repo' branch 'master' is not signed
+00:50:47     INFO -  warning: Skipped upgrade to unverified version
+00:50:50     INFO -  Run |./build.sh| to start building
+00:50:50     INFO - Return code: 0
+00:50:50     INFO - Resetting all git projects
+00:50:50     INFO - Running command: ['./repo', 'forall', '-c', 'git reset --hard'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:50     INFO - Copy/paste: ./repo forall -c "git reset --hard"
+00:50:50     INFO -  HEAD is now at 6426040 Fix Android.mk to use LOCAL_MODULE_TAGS.
+00:50:50     INFO -  HEAD is now at 3d11bf0 merge in ics-mr1-release history after reset to ics-mr1
+00:50:50     INFO -  HEAD is now at fadc5ac merge in ics-release history after reset to master
+00:50:50     INFO -  HEAD is now at 2a165be Merge pull request #46 from elefant/dev/emu-wifi
+00:50:50     INFO -  HEAD is now at ca1f327 Some stubs from dalvik to make things build
+00:50:51     INFO -  HEAD is now at 9abf0ab Merge pull request #4 from mikeaich/bug979595
+00:50:51     INFO -  HEAD is now at 7d45265 Add torospr to the list of AOSP devices
+00:50:51     INFO -  HEAD is now at 2fee3bb Bug 991450 (follow-up) - Add a default goldfish AP by running a hostapd.
+00:50:51     INFO -  HEAD is now at ef228b8 Update Vodafone IT APN names.
+00:50:51     INFO -  HEAD is now at df6b631 khronos: Refresh headers.
+00:50:51     INFO -  HEAD is now at 11816ad Merge pull request #3 from ting-yuan/master
+00:50:51     INFO -  HEAD is now at 966afbd merge in ics-mr1-release history after reset to ics-mr1
+00:50:51     INFO -  HEAD is now at 1143b99 Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 7322661 Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 8187254 Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 048dacd Build target bzip2 against the NDK.
+00:50:51     INFO -  HEAD is now at 537eaff In condvar wait functions, set the holder back before restoring count
+00:50:51     INFO -  HEAD is now at ddaa48f wimax : Fix for some DHCP servers not returning some DNS info
+00:50:51     INFO -  HEAD is now at f621afa Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 62c1bed fix bug 2603717.  Ensure all elf program headers are copied.
+00:50:51     INFO -  HEAD is now at 72940de Don't define strnlen in MacOS >= 10.7
+00:50:51     INFO -  HEAD is now at 6df1342 Build static library for unbundled apps, and build with prebuilt NDK.
+00:50:51     INFO -  HEAD is now at 988ffeb Merge remote branch 'goog/dalvik-dev' into dalvik-dev-to-master
+00:50:51     INFO -  HEAD is now at 5893fbe Bug 5041514 Re-implement with Apache 2.0 license
+00:50:51     INFO -  HEAD is now at 15321e1 Add additional implementation files needed by Skia.
+00:50:51     INFO -  HEAD is now at b259726 add meta-files about 3rd party projects
+00:50:51     INFO -  HEAD is now at 8c212eb Merge "Only use $EXTERNAL_STORAGE if it exists and is writable."
+00:50:51     INFO -  HEAD is now at bae491c Fix Harfbuzz hb_utf16_script_run_prev()
+00:50:51     INFO -  HEAD is now at 0fa67b9 Fixed read/use of uninitialized memory in RegexMatcher::MatchChunkAt().
+00:50:51     INFO -  HEAD is now at 132841c Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 3b2deb1 Reconcile with honeycomb-LTE-release
+00:50:51     INFO -  HEAD is now at d4fad7f Fix 4287289, where undefined behavior triggered in jpeg tile based
+00:50:51     INFO -  HEAD is now at 5e45169 libgsm: first import.
+00:50:51     INFO -  HEAD is now at 6946aa5 Add NOTICE file for BSD license
+00:50:51     INFO -  HEAD is now at 533c144 merge in ics-mr1-release history after reset to ics-mr1
+00:50:51     INFO -  HEAD is now at 6ccf734 Move libnl headers to their own project
+00:50:51     INFO -  HEAD is now at 84d92c7 am 615c9ab0: (-s ours) Upgrading libpng to 1.2.46 to fix a few vulnerabilities. DO NOT MERGE
+00:50:51     INFO -  HEAD is now at 3a40da0 The new streaming implementation of mkvparser is a little to aggressive in its validation
+00:50:51     INFO -  HEAD is now at 5155f1c Move mksh to a separate project.
+00:50:51     INFO -  HEAD is now at ce95d37 Merge pull request #39 from Seinlin/bug-993353-m
+00:50:51     INFO -  HEAD is now at b5b4c22 Initial commit of Open Sans font
+00:50:51     INFO -  HEAD is now at ce96fb2 Adjust SP before content is written below it.
+00:50:51     INFO -  HEAD is now at e217977 Remove the simulator target from all makefiles.
+00:50:51     INFO -  HEAD is now at 5688c04 Merge pull request #92 from JaminLiu/Bug968624_support_BT_pairing
+00:50:51     INFO -  HEAD is now at 0707363 add meta-files about 3rd party projects
+00:50:51     INFO -  HEAD is now at e6403c7 Merge pull request #1 from mvines/master
+00:50:52     INFO -  HEAD is now at 8c1c7cf Cherrypick change to skia
+00:50:52     INFO -  HEAD is now at 5f96009 am d868ec62: Reconcile gingerbread-plus-aosp and honeycomb
+00:50:52     INFO -  HEAD is now at ebe6230 resample: add missing constraint for register q9
+00:50:52     INFO -  HEAD is now at c999ff8 merge in ics-release history after reset to master
+00:50:52     INFO -  HEAD is now at a6734e0 Merge "Bugfix: == vs = mixup."
+00:50:52     INFO -  HEAD is now at c9fd2e5 Remove the simulator target from all makefiles.
+00:50:52     INFO -  HEAD is now at 319ce8d Import translations. DO NOT MERGE
+00:50:52     INFO -  HEAD is now at 68c2ec9 Add an empty CleanSpec.mk
+00:50:52     INFO -  HEAD is now at 495239e merge in ics-mr1-release history after reset to ics-mr1
+00:50:52     INFO -  HEAD is now at 25bd78d am 69a9d313: merge intel x86 patches into gingerbread branch
+00:50:52     INFO -  HEAD is now at 88fe2b8 Update WebP with the head version#I8317139b
+00:50:52     INFO -  HEAD is now at 4b6dc1e Fix invalid C code found by gcc-4.6.
+00:50:52     INFO -  HEAD is now at a01d378 Remove the simulator target from all makefiles.
+00:50:52     INFO -  HEAD is now at 648b749 Set ANDROID_LOG_NAME depending on application
+00:50:52     INFO -  HEAD is now at 6232e2d dist for dist_files
+00:50:52     INFO -  HEAD is now at 69e5801 Build zlib against NDK.
+00:50:53     INFO -  HEAD is now at 612ca9c Merge "Fix shutdown sequence to avoid SIGSEGV when running am command"
+00:50:53     INFO -  HEAD is now at a95d8db Remove the simulator target from all makefiles.
+00:50:53     INFO -  HEAD is now at bfc8e01 merge in ics-mr1-release history after reset to ics-mr1
+00:50:53     INFO -  HEAD is now at bc6f07c Merge pull request #19634 from lightsofapollo/global-venv
+00:50:53     INFO -  HEAD is now at 87ee480 Merge pull request #171 from bhearsum/change-fota-name
+00:50:53     INFO -  HEAD is now at a9b677f Merge "improve h/w composer documentation" into ics-mr1
+00:50:53     INFO -  HEAD is now at af9565a Reconcile with ics-mr1-release
+00:50:53     INFO -  HEAD is now at ca283b9 Bug 999458: lac/cid should be NULL if unavailable. r=echen
+00:50:53     INFO -  HEAD is now at fc294a4 merge in ics-mr1-release history after reset to ics-mr1
+00:50:53     INFO -  HEAD is now at 2d77f5a Merge "Minor fixes in native media documentation"
+00:50:55     INFO -  HEAD is now at a4062cc Merge "Upadte/Add prebuilt NDK"
+00:50:55     INFO -  HEAD is now at d268528 Fix for clang -fsyntax-only happens to see the same header as host gcc
+00:50:55     INFO -  HEAD is now at 627f9b2 Fix for clang -fsyntax-only happens to see the same header as host gcc
+00:50:55     INFO -  HEAD is now at 431afac Merge pull request #4 from jld/secure-goldfish
+00:50:55     INFO -  HEAD is now at acba00c Merge "Prebuilts for commons-io." into idea133
+00:50:55     INFO -  HEAD is now at 827214f Merge pull request #29 from michaelwu/fix-jbmr2
+00:50:56     INFO -  HEAD is now at 4f46930 Revert "Bug 897727: no emulator multiarch" for emulator test failures
+00:50:56     INFO -  HEAD is now at 2588cd8 merge in ics-mr1-release history after reset to ics-mr1
+00:50:56     INFO -  HEAD is now at 91e5551 Merge "toolbox: rmmod: fix module unloading"
+00:50:56     INFO -  HEAD is now at fa351ab Only do bugreport on user build with ADB enabled
+00:50:56     INFO -  HEAD is now at a8eea50 merge in ics-mr1-release history after reset to ics-mr1
+00:50:56     INFO -  HEAD is now at 3c903b5 merge in ics-mr1-release history after reset to ics-mr1
+00:50:56     INFO -  HEAD is now at 3ad9072 Add the new verifypw command to vold/cryptfs
+00:50:56     INFO - Return code: 0
+00:50:56     INFO - Cleaning all git projects
+00:50:56     INFO - Running command: ['./repo', 'forall', '-c', 'git clean -f -x -d'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:56     INFO - Copy/paste: ./repo forall -c "git clean -f -x -d"
+00:50:57     INFO -  Removing apps/bluetooth/test/integration/
+00:50:57     INFO -  Removing apps/bluetooth/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/bluetooth/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/bookmark/test/integration/
+00:50:57     INFO -  Removing apps/bookmark/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/bookmark/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/browser/test/integration/
+00:50:57     INFO -  Removing apps/browser/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/browser/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/calendar/test/integration/
+00:50:57     INFO -  Removing apps/calendar/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/calendar/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/callscreen/test/integration/
+00:50:57     INFO -  Removing apps/callscreen/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/callscreen/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/camera/test/integration/
+00:50:57     INFO -  Removing apps/camera/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/camera/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/clock/test/integration/
+00:50:57     INFO -  Removing apps/clock/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/clock/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/communications/test/integration/
+00:50:57     INFO -  Removing apps/communications/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/communications/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/costcontrol/test/integration/
+00:50:57     INFO -  Removing apps/costcontrol/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/costcontrol/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/email/test/integration/
+00:50:57     INFO -  Removing apps/email/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/email/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/emergency-call/test/integration/
+00:50:57     INFO -  Removing apps/emergency-call/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/emergency-call/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/findmydevice/test/integration/
+00:50:57     INFO -  Removing apps/findmydevice/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/findmydevice/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/fl/test/integration/
+00:50:57     INFO -  Removing apps/fl/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/fl/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/fm/test/integration/
+00:50:57     INFO -  Removing apps/fm/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/fm/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/ftu/test/integration/
+00:50:57     INFO -  Removing apps/gallery/test/integration/
+00:50:57     INFO -  Removing apps/gallery/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/gallery/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/homescreen/test/integration/
+00:50:57     INFO -  Removing apps/homescreen/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/homescreen/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/keyboard/test/integration/
+00:50:57     INFO -  Removing apps/keyboard/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/keyboard/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/marketplace.firefox.com/test/
+00:50:57     INFO -  Removing apps/music/test/integration/
+00:50:57     INFO -  Removing apps/music/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/music/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/operatorvariant/test/integration/
+00:50:57     INFO -  Removing apps/operatorvariant/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/operatorvariant/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/pdfjs/test/
+00:50:57     INFO -  Removing apps/ringtones/test/
+00:50:57     INFO -  Removing apps/search/test/integration/
+00:50:57     INFO -  Removing apps/search/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/search/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/setringtone/test/
+00:50:57     INFO -  Removing apps/settings/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/settings/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/sharedtest/test/integration/
+00:50:57     INFO -  Removing apps/sharedtest/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/sharedtest/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/sms/test/integration/
+00:50:57     INFO -  Removing apps/sms/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/sms/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/system/test/integration/
+00:50:57     INFO -  Removing apps/system/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/system/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/video/test/integration/
+00:50:57     INFO -  Removing apps/video/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/video/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/wallpaper/test/integration/
+00:50:57     INFO -  Removing apps/wallpaper/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/wallpaper/test/unit/_sandbox.html
+00:50:57     INFO -  Removing apps/wappush/test/integration/
+00:50:57     INFO -  Removing apps/wappush/test/unit/_proxy.html
+00:50:57     INFO -  Removing apps/wappush/test/unit/_sandbox.html
+00:50:57     INFO -  Removing build_stage/
+00:50:57     INFO -  Removing dev_apps/bookmarks-reader/test/
+00:50:57     INFO -  Removing dev_apps/collection/test/
+00:50:57     INFO -  Removing dev_apps/contacts-ds-provider1/test/
+00:50:57     INFO -  Removing dev_apps/contacts-ds-provider2/test/
+00:50:57     INFO -  Removing dev_apps/contacts-manager/test/
+00:50:57     INFO -  Removing dev_apps/demo-keyboard/test/integration/
+00:50:57     INFO -  Removing dev_apps/demo-keyboard/test/unit/_proxy.html
+00:50:57     INFO -  Removing dev_apps/demo-keyboard/test/unit/_sandbox.html
+00:50:57     INFO -  Removing dev_apps/ds-test/test/
+00:50:57     INFO -  Removing dev_apps/geoloc/test/
+00:50:57     INFO -  Removing dev_apps/home2/test/integration/
+00:50:57     INFO -  Removing dev_apps/home2/test/unit/_proxy.html
+00:50:57     INFO -  Removing dev_apps/home2/test/unit/_sandbox.html
+00:50:57     INFO -  Removing dev_apps/in_app_pay_test/test/
+00:50:57     INFO -  Removing dev_apps/marketplace.allizom.org/test/
+00:50:57     INFO -  Removing dev_apps/membuster/test/
+00:50:57     INFO -  Removing dev_apps/mochitest/test/
+00:50:57     INFO -  Removing dev_apps/music2/test/
+00:50:57     INFO -  Removing dev_apps/share-receiver/test/
+00:50:57     INFO -  Removing dev_apps/sheet-app-1/test/
+00:50:57     INFO -  Removing dev_apps/sheet-app-2/test/
+00:50:57     INFO -  Removing dev_apps/sheet-app-3/test/
+00:50:57     INFO -  Removing dev_apps/template/test/
+00:50:57     INFO -  Removing dev_apps/test-agent/config.json
+00:50:57     INFO -  Removing dev_apps/test-agent/test/integration/
+00:50:57     INFO -  Removing dev_apps/test-agent/test/unit/_proxy.html
+00:50:57     INFO -  Removing dev_apps/test-agent/test/unit/_sandbox.html
+00:50:57     INFO -  Removing dev_apps/test-container/test/
+00:50:57     INFO -  Removing dev_apps/test-findmydevice/test/
+00:50:57     INFO -  Removing dev_apps/test-fxa-client/test/
+00:50:57     INFO -  Removing dev_apps/test-iac-publisher/test/
+00:50:57     INFO -  Removing dev_apps/test-iac-subscriber/test/
+00:50:57     INFO -  Removing dev_apps/test-ime/test/
+00:50:57     INFO -  Removing dev_apps/test-otasp/test/
+00:50:57     INFO -  Removing dev_apps/test-receiver-1/test/
+00:50:57     INFO -  Removing dev_apps/test-receiver-2/test/
+00:50:57     INFO -  Removing dev_apps/test-receiver-inline/test/
+00:50:57     INFO -  Removing dev_apps/test-wappush/test/
+00:50:57     INFO -  Removing dev_apps/uitest-privileged/test/
+00:50:57     INFO -  Removing dev_apps/uitest/test/
+00:50:57     INFO -  Removing profile.tar.gz
+00:50:57     INFO -  Removing profile/
+00:50:57     INFO -  Removing shared/pages/import/js/parameters.js
+00:50:57     INFO -  Removing shared/resources/keyboard_layouts.json
+00:50:57     INFO -  Removing xulrunner-sdk-30/
+00:50:57     INFO - Return code: 0
+00:50:57     INFO - Running command: ['./gonk-misc/add-revision.py', '-o', 'sources.xml', '--force', '.repo/manifest.xml'] in /Users/mozilla/workspace/mozharness/workspace
+00:50:57     INFO - Copy/paste: ./gonk-misc/add-revision.py -o sources.xml --force .repo/manifest.xml
+00:51:01     INFO - Return code: 0
+00:51:01     INFO - Running command: ['cat', 'sources.xml'] in /Users/mozilla/workspace/mozharness/workspace
+00:51:01     INFO - Copy/paste: cat sources.xml
+00:51:01     INFO -  <?xml version="1.0" ?><manifest>
+00:51:01     INFO -    <!--original fetch url was https://android.googlesource.com/-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/external/aosp" name="aosp"/>
+00:51:01     INFO -    <!--original fetch url was git://codeaurora.org/-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/external/caf" name="caf"/>
+00:51:01     INFO -    <!--original fetch url was https://git.mozilla.org/b2g-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/b2g" name="b2gmozilla"/>
+00:51:01     INFO -    <!--original fetch url was git://github.com/mozilla-b2g/-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/b2g" name="b2g"/>
+00:51:01     INFO -    <!--original fetch url was git://github.com/mozilla/-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/b2g" name="mozilla"/>
+00:51:01     INFO -    <!--original fetch url was https://git.mozilla.org/releases-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/releases" name="mozillaorg"/>
+00:51:01     INFO -    <!--original fetch url was git://github.com/apitrace/-->
+00:51:01     INFO -    <remote fetch="https://git.mozilla.org/external/apitrace" name="apitrace"/>
+00:51:01     INFO -    <default remote="caf" revision="refs/tags/android-4.0.4_r2.1" sync-j="4"/>
+00:51:01     INFO -    <!-- Gonk specific things and forks -->
+00:51:01     INFO -    <project name="platform_build" path="build" remote="b2g" revision="2a165bebfa19b11b697837409f9550dd2917c46c">
+00:51:01     INFO -      <copyfile dest="Makefile" src="core/root.mk"/>
+00:51:01     INFO -    </project>
+00:51:01     INFO -    <project name="fake-dalvik" path="dalvik" remote="b2g" revision="ca1f327d5acc198bb4be62fa51db2c039032c9ce"/>
+00:51:01     INFO -    <project name="gaia.git" path="gaia" remote="mozillaorg" revision="bc6f07c149770c6e6dfbea941ac65138dc364a15"/>
+00:51:01     INFO -    <project name="gonk-misc" path="gonk-misc" remote="b2g" revision="87ee480405c4a109c01f68dd64de625f1ff819d9"/>
+00:51:01     INFO -    <project name="rilproxy" path="rilproxy" remote="b2g" revision="827214fcf38d6569aeb5c6d6f31cb296d1f09272"/>
+00:51:01     INFO -    <project name="platform_hardware_ril" path="hardware/ril" remote="b2g" revision="ca283b9db2b151d465cfd2e19346cf58fe89e413"/>
+00:51:01     INFO -    <project name="platform_external_qemu" path="external/qemu" remote="b2g" revision="5688c04e38ceacb9069b6157db69b37beafab331"/>
+00:51:01     INFO -    <project name="moztt" path="external/moztt" remote="b2g" revision="ce95d372e6d285725b96490afdaaf489ad8f9ca9"/>
+00:51:01     INFO -    <project name="apitrace" path="external/apitrace" remote="apitrace" revision="df6b6315b7217522ae03151449a841f0c382c888"/>
+00:51:01     INFO -    <!-- Stock Android things -->
+00:51:01     INFO -    <project name="platform/abi/cpp" path="abi/cpp" revision="6426040f1be4a844082c9769171ce7f5341a5528"/>
+00:51:01     INFO -    <project name="platform/bionic" path="bionic" revision="3d11bf0f3f3cf848f6f1e8449bf8736d8d1c78a3"/>
+00:51:01     INFO -    <project name="platform/bootable/recovery" path="bootable/recovery" revision="fadc5ac81d6400ebdd041f7d4ea64021596d6b7d"/>
+00:51:01     INFO -    <project name="device/common" path="device/common" revision="7d4526582f88808a3194e1a3b304abb369d2745c"/>
+00:51:01     INFO -    <project name="device/sample" path="device/sample" revision="ef228b8b377a9663e94be4b1aeb6c2bf7a07d098"/>
+00:51:01     INFO -    <project name="platform_external_apriori" path="external/apriori" remote="b2g" revision="11816ad0406744f963537b23d68ed9c2afb412bd"/>
+00:51:01     INFO -    <project name="platform/external/bluetooth/bluez" path="external/bluetooth/bluez" revision="966afbd88f0bfc325bf80274ad2723c238883fa1"/>
+00:51:01     INFO -    <project name="platform/external/bluetooth/glib" path="external/bluetooth/glib" revision="1143b9918eab068401b604eb11c3f651f4e38b25"/>
+00:51:01     INFO -    <project name="platform/external/bluetooth/hcidump" path="external/bluetooth/hcidump" revision="7322661808c2006b7848e79e6bb72b37fbcf6710"/>
+00:51:01     INFO -    <project name="platform/external/bsdiff" path="external/bsdiff" revision="81872540236d9bb15cccf963d05b9de48baa5375"/>
+00:51:01     INFO -    <project name="platform/external/bzip2" path="external/bzip2" revision="048dacdca43eed1534689ececcf2781c63e1e4ba"/>
+00:51:01     INFO -    <project name="platform/external/dbus" path="external/dbus" revision="537eaff5de9aace3348436166d4cde7adc1e488e"/>
+00:51:01     INFO -    <project name="platform/external/dhcpcd" path="external/dhcpcd" revision="ddaa48f57b54b2862b3e6dcf18a44c9647f3baaa"/>
+00:51:01     INFO -    <project name="platform/external/dnsmasq" path="external/dnsmasq" revision="f621afad94df46204c25fc2593a19d704d2637f5"/>
+00:51:01     INFO -    <project name="platform_external_elfcopy" path="external/elfcopy" remote="b2g" revision="62c1bed1c4505369cac2e72fbe30452a598fb690"/>
+00:51:01     INFO -    <project name="platform_external_elfutils" path="external/elfutils" remote="b2g" revision="72940dec691fa3255e13df01f8c53b620e446066"/>
+00:51:01     INFO -    <project name="platform/external/expat" path="external/expat" revision="6df134250feab71edb5915ecaa6268210bca76c5"/>
+00:51:01     INFO -    <project name="platform/external/fdlibm" path="external/fdlibm" revision="988ffeb12a6e044ae3504838ef1fee3fe0716934"/>
+00:51:01     INFO -    <project name="platform/external/flac" path="external/flac" revision="5893fbe890f5dab8e4146d2baa4bd2691c0739e0"/>
+00:51:01     INFO -    <project name="platform/external/freetype" path="external/freetype" revision="15321e16a085b9b5c85cf029aee86bf57b2e65c1"/>
+00:51:01     INFO -    <project name="platform/external/giflib" path="external/giflib" revision="b2597268aef084202a8c349d1cc072c03c6e22eb"/>
+00:51:01     INFO -    <project name="platform/external/gtest" path="external/gtest" revision="8c212ebe53bb2baab3575f03069016f1fb11e449"/>
+00:51:01     INFO -    <project name="platform/external/harfbuzz" path="external/harfbuzz" revision="bae491c03a00757d83ede8d855b7d85d246bde3d"/>
+00:51:01     INFO -    <!-- icu4c is missing the default tag in caf, that's the *only* reason for the hardcode -->
+00:51:01     INFO -    <project name="platform/external/icu4c" path="external/icu4c" revision="0fa67b93b831c6636ca18b152a1b1b14cc99b034"/>
+00:51:01     INFO -    <project name="platform/external/iptables" path="external/iptables" revision="3b2deb17f065c5664bb25e1a28489e5792eb63ff"/>
+00:51:01     INFO -    <project name="platform/external/jpeg" path="external/jpeg" revision="d4fad7f50f79626455d88523207e05b868819cd8"/>
+00:51:01     INFO -    <project name="platform/external/libgsm" path="external/libgsm" revision="5e4516958690b9a1b2c98f88eeecba3edd2dbda4"/>
+00:51:01     INFO -    <project name="platform/external/liblzf" path="external/liblzf" revision="6946aa575b0949d045722794850896099d937cbb"/>
+00:51:01     INFO -    <project name="platform/external/libnfc-nxp" path="external/libnfc-nxp" revision="533c14450e6239cce8acb74f4e4dea2c89f8f219"/>
+00:51:01     INFO -    <project name="platform/external/libnl-headers" path="external/libnl-headers" revision="6ccf7349d61f73ac26a0675d735d903ab919c658"/>
+00:51:01     INFO -    <project name="platform/external/libpng" path="external/libpng" revision="84d92c718ab9f48faec0f640747c4b6f7a995607"/>
+00:51:01     INFO -    <project name="platform/external/libvpx" path="external/libvpx" revision="3a40da0d96da5c520e7707aa14f48a80956e20d7"/>
+00:51:01     INFO -    <project name="platform/external/mksh" path="external/mksh" revision="5155f1c7438ef540d7b25eb70aa1639579795b07"/>
+00:51:01     INFO -    <project name="platform_external_opensans" path="external/opensans" remote="b2g" revision="b5b4c226ca1d71e936153cf679dda6d3d60e2354"/>
+00:51:01     INFO -    <project name="platform/external/openssl" path="external/openssl" revision="ce96fb211b9a44bbd7fb5ef7ed0e6c1244045c2e"/>
+00:51:01     INFO -    <project name="platform/external/protobuf" path="external/protobuf" revision="e217977611c52bccde7f7c78e1d3c790c6357431"/>
+00:51:01     INFO -    <project name="platform/external/safe-iop" path="external/safe-iop" revision="07073634e2e3aa4f518e36ed5dec3aabc549d5fb"/>
+00:51:01     INFO -    <project name="screencap-gonk" path="external/screencap-gonk" remote="b2g" revision="e6403c71e9eca8cb943739d5a0a192deac60fc51"/>
+00:51:01     INFO -    <project name="platform/external/skia" path="external/skia" revision="8c1c7cfacd82a174c65fcbf839d7037e3692aee8"/>
+00:51:01     INFO -    <project name="platform/external/sonivox" path="external/sonivox" revision="5f9600971859fe072f31b38a51c38157f5f9b381"/>
+00:51:01     INFO -    <project name="platform/external/speex" path="external/speex" revision="ebe6230a7f7c69f5a4389f2b09b7b19ef9e94f32"/>
+00:51:01     INFO -    <project name="platform/external/sqlite" path="external/sqlite" revision="c999ff8c12a4cf81cb9ad628f47b2720effba5e5"/>
+00:51:01     INFO -    <project name="platform/external/stlport" path="external/stlport" revision="a6734e0645fce81c9610de0488b729207bfa576e"/>
+00:51:01     INFO -    <project name="platform/external/strace" path="external/strace" revision="c9fd2e5ef7d002e12e7cf2512506c84a9414b0fd"/>
+00:51:01     INFO -    <project name="platform/external/svox" path="external/svox" revision="319ce8db8442d58f8d98eaf58becca74d817734f"/>
+00:51:01     INFO -    <project name="platform/external/tagsoup" path="external/tagsoup" revision="68c2ec9e0acdb3214b7fb91dbab8c9fab8736817"/>
+00:51:01     INFO -    <project name="platform/external/tinyalsa" path="external/tinyalsa" revision="495239e683a728957c890c124b239f9b7b8ef5a8"/>
+00:51:01     INFO -    <project name="platform/external/tremolo" path="external/tremolo" revision="25bd78d2392dbdc879ae53382cde9d019f79cf6f"/>
+00:51:01     INFO -    <project name="platform/external/webp" path="external/webp" revision="88fe2b83c4b9232cd08729556fd0485d6a6a92cd"/>
+00:51:01     INFO -    <project name="platform/external/webrtc" path="external/webrtc" revision="4b6dc1ec58105d17dc8c2f550124cc0621dc93b7"/>
+00:51:01     INFO -    <project name="platform/external/wpa_supplicant" path="external/wpa_supplicant" revision="a01d37870bbf9892d43e792e5de0683ca41c5497"/>
+00:51:01     INFO -    <project name="platform/external/wpa_supplicant_8" path="external/wpa_supplicant_8" revision="648b7492d15bb4efaeebdfdd8bd261563a5f6227"/>
+00:51:01     INFO -    <project name="platform/external/zlib" path="external/zlib" revision="69e5801bd16a495e1c1666669fe827b1ddb8d56b"/>
+00:51:01     INFO -    <project name="platform/external/yaffs2" path="external/yaffs2" revision="6232e2d5ab34a40d710e4b05ab0ec6e3727804e7"/>
+00:51:01     INFO -    <project name="platform/frameworks/base" path="frameworks/base" revision="612ca9c6a55bd932c45f5b85ae932a1b712dd914"/>
+00:51:01     INFO -    <project name="platform/frameworks/opt/emoji" path="frameworks/opt/emoji" revision="a95d8db002770469d72dfaf59ff37ac96db29a87"/>
+00:51:01     INFO -    <project name="platform/frameworks/support" path="frameworks/support" revision="bfc8e01b7b0d5ea70ce89d0409b72b7f7d540f43"/>
+00:51:01     INFO -    <project name="platform/hardware/libhardware" path="hardware/libhardware" revision="a9b677fce432b29ab8f61e13796f34880dc0fe0f"/>
+00:51:01     INFO -    <project name="platform/hardware/libhardware_legacy" path="hardware/libhardware_legacy" revision="af9565aa8be0136463ec549d9d3abdd906d2c390"/>
+00:51:01     INFO -    <project name="platform/libcore" path="libcore" revision="fc294a48d80d9e2b2ac126edf93ad316f5f6cf72"/>
+00:51:01     INFO -    <project name="platform/ndk" path="ndk" revision="2d77f5a05f60029c981f299b222cfe28db18ccf7"/>
+00:51:01     INFO -    <project name="platform/prebuilt" path="prebuilt" revision="a4062cc40fcaa0776dc880ce591b4c515d36f420"/>
+00:51:01     INFO -    <project name="platform/system/bluetooth" path="system/bluetooth" revision="2588cd802f322650ed737dfb7a10e9ad94064e99"/>
+00:51:01     INFO -    <project name="platform/system/core" path="system/core" revision="91e5551f88aea5aa64e1b4f8b4b52d7be2b28b64"/>
+00:51:01     INFO -    <project name="platform/system/extras" path="system/extras" revision="fa351ab265957fa8815df3c4ca1f3c105f253e8b"/>
+00:51:01     INFO -    <project name="platform/system/media" path="system/media" revision="a8eea50f80327f15cb04bbdfee2d1cfcc4c3ce4a"/>
+00:51:01     INFO -    <project name="platform/system/netd" path="system/netd" revision="3c903b555975fa59d6688a0a6417ac7512c202e7"/>
+00:51:01     INFO -    <project name="platform/system/vold" path="system/vold" revision="3ad9072a5d6f6bda32123b367545649364e3c11d"/>
+00:51:01     INFO -    <!-- Emulator specific things -->
+00:51:01     INFO -    <project name="android-development" path="development" remote="b2g" revision="9abf0ab68376afae3e1c7beefa3e9cbee2fde202"/>
+00:51:01     INFO -    <project name="device_generic_goldfish" path="device/generic/goldfish" remote="b2g" revision="2fee3bbbfc236b883ef8507e27d88b17b203fe25"/>
+00:51:01     INFO -    <project name="platform/external/iproute2" path="external/iproute2" revision="132841c0d7e86fabcec443b3b54aee2699b301a4"/>
+00:51:01     INFO -    <project name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" revision="d2685281e2e54ca14d1df304867aa82c37b27162"/>
+00:51:01     INFO -    <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" revision="627f9b20fc518937b93747a7ff1ed4f5ed46e06f"/>
+00:51:01     INFO -    <project name="platform/prebuilts/tools" path="prebuilts/tools" revision="acba00cdb4596c6dcb61ed06f14cf4ec89623539"/>
+00:51:01     INFO -    <project name="platform_prebuilts_qemu-kernel" path="prebuilts/qemu-kernel" remote="b2g" revision="431afac2ebfdd9c1c8402b413ff5914ed448e961"/>
+00:51:01     INFO -    <project name="android-sdk" path="sdk" remote="b2g" revision="4f46930827957afbce500a4a920755a218bf3155"/>
+00:51:01     INFO -  </manifest>
+00:51:01     INFO - Return code: 0
+00:51:01     INFO - Running command: ['cp', '-p', 'sources.xml', 'sources.xml.original'] in /Users/mozilla/workspace/mozharness/workspace
+00:51:01     INFO - Copy/paste: cp -p sources.xml sources.xml.original
+00:51:01     INFO - Return code: 0
+00:51:01     INFO - Setting buildbot property gaia_revision to bc6f07c149770c6e6dfbea941ac65138dc364a15
+00:51:01     INFO - Writing buildbot properties ['gaia_revision'] to /Users/mozilla/workspace/mozharness/properties/gaia_revision
+00:51:01     INFO - Writing to file /Users/mozilla/workspace/mozharness/properties/gaia_revision
+00:51:01     INFO - Contents:
+00:51:01     INFO -  gaia_revision:bc6f07c149770c6e6dfbea941ac65138dc364a15
+00:51:01     INFO - TinderboxPrint: gaia_revlink: https://git.mozilla.org/?p=releases/gaia.git;a=tree;h=bc6f07c149770c6e6dfbea941ac65138dc364a15
+00:51:01     INFO - Reading from file /Users/mozilla/workspace/mozharness/workspace/gecko/b2g/locales/all-locales
+00:51:01     INFO - Contents:
+00:51:01     INFO -  es-ES
+00:51:01     INFO -  pl
+00:51:01     INFO -  pt-BR
+00:51:01     INFO - Changing directory to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n.
+00:51:01     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.mercurial.MercurialVCS object at 0x10e820550>, u'es-ES'), kwargs: {}, attempt #1
+00:51:01     INFO - Setting /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES to https://hg.mozilla.org/l10n-central/es-ES.
+00:51:01     INFO - Pulling https://hg.mozilla.org/l10n-central/es-ES to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES and updating.
+00:51:01     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'pull', u'https://hg.mozilla.org/l10n-central/es-ES'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:01     INFO - Copy/paste: hg --config ui.merge=internal:merge pull https://hg.mozilla.org/l10n-central/es-ES
+00:51:01     INFO -  warning: hg.mozilla.org certificate with fingerprint af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27 not verified (check hostfingerprints or web.cacerts config setting)
+00:51:02     INFO -  pulling from https://hg.mozilla.org/l10n-central/es-ES
+00:51:02     INFO -  searching for changes
+00:51:02     INFO -  no changes found
+00:51:02     INFO - Return code: 0
+00:51:02     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES.
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  default
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:02     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:02     INFO - Return code: 0
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  2706d3a5dc9b
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES.
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  default
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:02     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:02     INFO - Return code: 0
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  2706d3a5dc9b
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.mercurial.MercurialVCS object at 0x10e820550>, u'pl'), kwargs: {}, attempt #1
+00:51:02     INFO - Setting /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl to https://hg.mozilla.org/l10n-central/pl.
+00:51:02     INFO - Pulling https://hg.mozilla.org/l10n-central/pl to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl and updating.
+00:51:02     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'pull', u'https://hg.mozilla.org/l10n-central/pl'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge pull https://hg.mozilla.org/l10n-central/pl
+00:51:02     INFO -  warning: hg.mozilla.org certificate with fingerprint af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27 not verified (check hostfingerprints or web.cacerts config setting)
+00:51:02     INFO -  pulling from https://hg.mozilla.org/l10n-central/pl
+00:51:02     INFO -  searching for changes
+00:51:02     INFO -  no changes found
+00:51:02     INFO - Return code: 0
+00:51:02     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl.
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  default
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:02     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:02     INFO - Return code: 0
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  ae27f8d3469f
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl.
+00:51:02     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:02     INFO - Reading from file tmpfile_stdout
+00:51:02     INFO - Output received:
+00:51:02     INFO -  default
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:02     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:02     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:02     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:03     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:03     INFO - Return code: 0
+00:51:03     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:03     INFO - Reading from file tmpfile_stdout
+00:51:03     INFO - Output received:
+00:51:03     INFO -  ae27f8d3469f
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.mercurial.MercurialVCS object at 0x10e820550>, u'pt-BR'), kwargs: {}, attempt #1
+00:51:03     INFO - Setting /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR to https://hg.mozilla.org/l10n-central/pt-BR.
+00:51:03     INFO - Pulling https://hg.mozilla.org/l10n-central/pt-BR to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR and updating.
+00:51:03     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'pull', u'https://hg.mozilla.org/l10n-central/pt-BR'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge pull https://hg.mozilla.org/l10n-central/pt-BR
+00:51:03     INFO -  warning: hg.mozilla.org certificate with fingerprint af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27 not verified (check hostfingerprints or web.cacerts config setting)
+00:51:03     INFO -  pulling from https://hg.mozilla.org/l10n-central/pt-BR
+00:51:03     INFO -  searching for changes
+00:51:03     INFO -  no changes found
+00:51:03     INFO - Return code: 0
+00:51:03     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR.
+00:51:03     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:03     INFO - Reading from file tmpfile_stdout
+00:51:03     INFO - Output received:
+00:51:03     INFO -  default
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:03     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:03     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:03     INFO - Return code: 0
+00:51:03     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:03     INFO - Reading from file tmpfile_stdout
+00:51:03     INFO - Output received:
+00:51:03     INFO -  294120afeaf0
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:03     INFO - Updating /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR.
+00:51:03     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'branch'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge branch
+00:51:03     INFO - Reading from file tmpfile_stdout
+00:51:03     INFO - Output received:
+00:51:03     INFO -  default
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:03     INFO - Running command: ['hg', '--config', 'ui.merge=internal:merge', 'update', '-C'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge update -C
+00:51:03     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:03     INFO - Return code: 0
+00:51:03     INFO - Getting output from command: ['hg', '--config', 'ui.merge=internal:merge', 'parent', '--template', '{node|short}'] in /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR
+00:51:03     INFO - Copy/paste: hg --config ui.merge=internal:merge parent --template {node|short}
+00:51:03     INFO - Reading from file tmpfile_stdout
+00:51:03     INFO - Output received:
+00:51:03     INFO -  294120afeaf0
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stderr',), kwargs: {}, attempt #1
+00:51:03     INFO - retry: Calling <built-in function remove> with args: ('tmpfile_stdout',), kwargs: {}, attempt #1
+00:51:03     INFO - Changing directory to /Users/mozilla/workspace/mozharness.
+00:51:03     INFO - copying tree: /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES/mobile/overrides to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/es-ES/b2g/chrome/overrides
+00:51:03     INFO - copying tree: /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl/mobile/overrides to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pl/b2g/chrome/overrides
+00:51:03     INFO - copying tree: /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR/mobile/overrides to /Users/mozilla/workspace/mozharness/workspace/gecko-l10n/pt-BR/b2g/chrome/overrides
+00:51:03     INFO - Skipping checkout_gaia_l10n because no gaia language file was specified.
+00:51:03     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10e7dfdd0>> with args: (<mozharness.base.vcs.hgtool.HgtoolVCS object at 0x10e820e90>, '/Users/mozilla/workspace/mozharness/workspace/compare-locales'), kwargs: {}, attempt #1
+00:51:03     INFO - Running command: ['hgtool.py', '-r', 'RELEASE_AUTOMATION', 'https://hg.mozilla.org/build/compare-locales', '/Users/mozilla/workspace/mozharness/workspace/compare-locales']
+00:51:03     INFO - Copy/paste: hgtool.py -r RELEASE_AUTOMATION https://hg.mozilla.org/build/compare-locales /Users/mozilla/workspace/mozharness/workspace/compare-locales
+00:51:03     INFO - Using env: {'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin'}
+00:51:03     INFO -  Reporting hg version in use
+00:51:03     INFO -  command: START
+00:51:03     INFO -  command: hg -q version
+00:51:03     INFO -  command: cwd: .
+00:51:03     INFO -  command: output:
+00:51:03     INFO -  Mercurial Distributed SCM (version 2.9.2)
+00:51:03     INFO -  command: END (0.04s elapsed)
+00:51:03     INFO -  command: START
+00:51:03     INFO -  command: hg path default
+00:51:03     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/compare-locales
+00:51:03     INFO -  command: output:
+00:51:03     INFO -  https://hg.mozilla.org/build/compare-locales
+00:51:03     INFO -  command: END (0.05 elapsed)
+00:51:03     INFO -  command: START
+00:51:03     INFO -  command: hg pull https://hg.mozilla.org/build/compare-locales
+00:51:03     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/compare-locales
+00:51:03     INFO -  command: output:
+00:51:04     INFO -  warning: hg.mozilla.org certificate with fingerprint af:27:b9:34:47:4e:e5:98:01:f6:83:2b:51:c9:aa:d8:df:fb:1a:27 not verified (check hostfingerprints or web.cacerts config setting)
+00:51:04     INFO -  pulling from https://hg.mozilla.org/build/compare-locales
+00:51:04     INFO -  searching for changes
+00:51:04     INFO -  no changes found
+00:51:04     INFO -  command: END (0.26s elapsed)
+00:51:04     INFO -  command: START
+00:51:04     INFO -  command: hg update -C -r RELEASE_AUTOMATION
+00:51:04     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/compare-locales
+00:51:04     INFO -  command: output:
+00:51:04     INFO -  0 files updated, 0 files merged, 0 files removed, 0 files unresolved
+00:51:04     INFO -  command: END (0.08s elapsed)
+00:51:04     INFO -  command: START
+00:51:04     INFO -  command: hg parent --template {node|short}
+00:51:04     INFO -  command: cwd: /Users/mozilla/workspace/mozharness/workspace/compare-locales
+00:51:04     INFO -  command: output:
+00:51:04     INFO -  1fc4e9bc8287
+00:51:04     INFO -  command: END (0.05 elapsed)
+00:51:04     INFO -  Got revision 1fc4e9bc8287
+00:51:04     INFO - Return code: 0
+00:51:04     INFO - Setting buildbot property compare_locales_revision to 1fc4e9bc8287
+00:51:04     INFO - Writing buildbot properties ['compare_locales_revision'] to /Users/mozilla/workspace/mozharness/properties/compare_locales_revision
+00:51:04     INFO - Writing to file /Users/mozilla/workspace/mozharness/properties/compare_locales_revision
+00:51:04     INFO - Contents:
+00:51:04     INFO -  compare_locales_revision:1fc4e9bc8287
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping checkout-gecko step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping download-gonk step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping unpack-gonk step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping checkout-gaia step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping checkout-gaia-l10n step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping checkout-gecko-l10n step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping checkout-compare-locales step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Running get-blobs step.
+00:51:04     INFO - #####
+00:51:04     INFO - Running main action method: get_blobs
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Skipping update-source-manifest step.
+00:51:04     INFO - #####
+00:51:04     INFO - #####
+00:51:04     INFO - ##### Running build step.
+00:51:04     INFO - #####
+00:51:04     INFO - Running main action method: build
+00:51:04     INFO - Running command: ccache -z in /Users/mozilla/workspace/mozharness/workspace
+00:51:04     INFO - Using env: {'AWS_ACCESS_KEY_ID': 'AKIAJ2SW6QAFUU5Y5QOA',
+00:51:04     INFO -  'AWS_SECRET_ACCESS_KEY': '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',
+00:51:04     INFO -  'AZURE_STORAGE_ACCESS_KEY': '4deZv2G8hzgCe2pFbfdscDge0Xxh+LKg0j4GzVsKw2W5J4fR9RTn3wwGuVNfTSVn4bt6MP2aZdq03PBICyq9Fw==',
+00:51:04     INFO -  'AZURE_STORAGE_ACCOUNT': 'taskclusterlog',
+00:51:04     INFO -  'Apple_PubSub_Socket_Render': '/tmp/launch-wmxhHc/Render',
+00:51:04     INFO -  'B2G_UPDATER': '1',
+00:51:04     INFO -  'B2G_UPDATE_CHANNEL': 'emulator/default/default',
+00:51:04     INFO -  'CCACHE_BASEDIR': '/Users/mozilla/workspace/mozharness/workspace',
+00:51:04     INFO -  'COLORFGBG': '7;0',
+00:51:04     INFO -  'DIGITALOCEAN_API_KEY': 'f1657f0bb8aeafc2444833a3af1422a5',
+00:51:04     INFO -  'DIGITALOCEAN_CLIENT_ID': '3edfec0de7d3d0deeb1131f8c32ad581',
+00:51:04     INFO -  'DISPLAY': '/tmp/launch-SyJG5Y/org.macosforge.xquartz:0',
+00:51:04     INFO -  'DOCKER_HOST': '127.0.0.1:60236',
+00:51:04     INFO -  'EDITOR': 'vim',
+00:51:04     INFO -  'GH_TESTING_REPO': 'junkyard',
+00:51:04     INFO -  'GH_TESTING_TOKEN': 'ec6fc0b2b20ddb87fd3f90c1522d720c99c8dc93',
+00:51:04     INFO -  'GH_TESTING_USER': 'lightsofapollo-staging',
+00:51:04     INFO -  'GOPATH': '/Users/mozilla/go/',
+00:51:04     INFO -  'GREP_COLOR': '1;32',
+00:51:04     INFO -  'GREP_OPTIONS': '--color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn',
+00:51:04     INFO -  'HEROKU_API_TOKEN': '809f5af6-5f62-4602-b26a-253ffae70262',
+00:51:04     INFO -  'HOME': '/Users/mozilla',
+00:51:04     INFO -  'IRON_PROJECT_ID': '52f5cc322001c0000900001e',
+00:51:04     INFO -  'IRON_TOKEN': '82Rsh_3uJD9fj5QWoHSDqRDcn3k',
+00:51:04     INFO -  'KEENIO_PROJECT_ID': '52f7ec4173f4bb6ed3000002',
+00:51:04     INFO -  'KEENIO_READ_KEY': '71e436759a1b5d9ef767e583a0711450eeb1d8584324b5dde43bb156cf1d8db83212d98c2a864c481a605b002ccda0ad0a530f3b772e22b17a892307ee5329e3c4e91662f557f43e44dd6c27ffbcb20bae9f33eb716bcc5cadd8704821f985f4179c894f825f9a51d7769835caa9f0e5',
+00:51:04     INFO -  'KEENIO_WRITE_KEY': '156d09fd6119f770847972cb77a5a321703f42a39ff63642e10fecf00c6feb1c5985bbc7b92cb488a4c5b9b3929a148e212e204df62dc01d84a34d20b0794b6a9a523ac05c638fd8a7bbf87b44d145a52374adf92d6c4f76b2d5416cf45a83e19e2a0fea6ea5aca9d7aac4dba70f54ba',
+00:51:04     INFO -  'L10NBASEDIR': '/Users/mozilla/workspace/mozharness/workspace/gecko-l10n',
+00:51:04     INFO -  'LANG': 'en_US.UTF-8',
+00:51:04     INFO -  'LC_CTYPE': 'en_US.UTF-8',
+00:51:04     INFO -  'LESS': '-R',
+00:51:04     INFO -  'LOGNAME': 'mozilla',
+00:51:04     INFO -  'LSCOLORS': 'Gxfxcxdxbxegedabagacad',
+00:51:04     INFO -  'LS_COLORS': 'no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:',
+00:51:04     INFO -  'MOZ_CHROME_MULTILOCALE': 'es-ES pl pt-BR',
+00:51:04     INFO -  'OLDPWD': '/Users/mozilla',
+00:51:04     INFO -  'PAGER': 'less',
+00:51:04     INFO -  'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin:/Users/mozilla/workspace/mozharness/workspace/compare-locales/scripts',
+00:51:04     INFO -  'PWD': '/Users/mozilla/workspace/mozharness',
+00:51:04     INFO -  'PYTHONPATH': ':/Users/mozilla/workspace/mozharness/workspace/compare-locales/lib',
+00:51:04     INFO -  'SHELL': '/bin/zsh',
+00:51:04     INFO -  'SHLVL': '1',
+00:51:04     INFO -  'SSH_AGENT_PID': '832',
+00:51:04     INFO -  'SSH_AUTH_SOCK': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T//ssh-cbdj7CXSj6ui/agent.830',
+00:51:04     INFO -  'TASKCLUSTER_AMQP_URL': 'amqp://rsrveqlh:P51PGxChA5MfeBoRVFeq3s_khDx1OCcA@red-crocodile.rmq.cloudamqp.com/rsrveqlh',
+00:51:04     INFO -  'TERM': 'xterm',
+00:51:04     INFO -  'TERM_PROGRAM': 'iTerm.app',
+00:51:04     INFO -  'TMPDIR': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T/',
+00:51:04     INFO -  'USER': 'mozilla',
+00:51:04     INFO -  'VISUAL': 'vim',
+00:51:04     INFO -  'ZSH': '/Users/mozilla/.oh-my-zsh',
+00:51:04     INFO -  'ZSH_THEME': 'lightsofapollo',
+00:51:04     INFO -  '_': '/Users/mozilla/workspace/mozharness/./scripts/b2g_build.py',
+00:51:04     INFO -  '__CF_USER_TEXT_ENCODING': '0x1F5:0:0',
+00:51:04     INFO -  '__CHECKFIX1436934': '1'}
+00:51:04     INFO -  Statistics cleared
+00:51:04     INFO - Return code: 0
+00:51:04     INFO - Running command: ['./build.sh', u'droid'] in /Users/mozilla/workspace/mozharness/workspace
+00:51:04     INFO - Copy/paste: ./build.sh droid
+00:51:04     INFO - Using env: {'AWS_ACCESS_KEY_ID': 'AKIAJ2SW6QAFUU5Y5QOA',
+00:51:04     INFO -  'AWS_SECRET_ACCESS_KEY': '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',
+00:51:04     INFO -  'AZURE_STORAGE_ACCESS_KEY': '4deZv2G8hzgCe2pFbfdscDge0Xxh+LKg0j4GzVsKw2W5J4fR9RTn3wwGuVNfTSVn4bt6MP2aZdq03PBICyq9Fw==',
+00:51:04     INFO -  'AZURE_STORAGE_ACCOUNT': 'taskclusterlog',
+00:51:04     INFO -  'Apple_PubSub_Socket_Render': '/tmp/launch-wmxhHc/Render',
+00:51:04     INFO -  'B2G_UPDATER': '1',
+00:51:04     INFO -  'B2G_UPDATE_CHANNEL': 'emulator/default/default',
+00:51:04     INFO -  'CCACHE_BASEDIR': '/Users/mozilla/workspace/mozharness/workspace',
+00:51:04     INFO -  'COLORFGBG': '7;0',
+00:51:04     INFO -  'DIGITALOCEAN_API_KEY': 'f1657f0bb8aeafc2444833a3af1422a5',
+00:51:04     INFO -  'DIGITALOCEAN_CLIENT_ID': '3edfec0de7d3d0deeb1131f8c32ad581',
+00:51:04     INFO -  'DISPLAY': '/tmp/launch-SyJG5Y/org.macosforge.xquartz:0',
+00:51:04     INFO -  'DOCKER_HOST': '127.0.0.1:60236',
+00:51:04     INFO -  'EDITOR': 'vim',
+00:51:04     INFO -  'GH_TESTING_REPO': 'junkyard',
+00:51:04     INFO -  'GH_TESTING_TOKEN': 'ec6fc0b2b20ddb87fd3f90c1522d720c99c8dc93',
+00:51:04     INFO -  'GH_TESTING_USER': 'lightsofapollo-staging',
+00:51:04     INFO -  'GOPATH': '/Users/mozilla/go/',
+00:51:04     INFO -  'GREP_COLOR': '1;32',
+00:51:04     INFO -  'GREP_OPTIONS': '--color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn',
+00:51:04     INFO -  'HEROKU_API_TOKEN': '809f5af6-5f62-4602-b26a-253ffae70262',
+00:51:04     INFO -  'HOME': '/Users/mozilla',
+00:51:04     INFO -  'IRON_PROJECT_ID': '52f5cc322001c0000900001e',
+00:51:04     INFO -  'IRON_TOKEN': '82Rsh_3uJD9fj5QWoHSDqRDcn3k',
+00:51:04     INFO -  'KEENIO_PROJECT_ID': '52f7ec4173f4bb6ed3000002',
+00:51:04     INFO -  'KEENIO_READ_KEY': '71e436759a1b5d9ef767e583a0711450eeb1d8584324b5dde43bb156cf1d8db83212d98c2a864c481a605b002ccda0ad0a530f3b772e22b17a892307ee5329e3c4e91662f557f43e44dd6c27ffbcb20bae9f33eb716bcc5cadd8704821f985f4179c894f825f9a51d7769835caa9f0e5',
+00:51:04     INFO -  'KEENIO_WRITE_KEY': '156d09fd6119f770847972cb77a5a321703f42a39ff63642e10fecf00c6feb1c5985bbc7b92cb488a4c5b9b3929a148e212e204df62dc01d84a34d20b0794b6a9a523ac05c638fd8a7bbf87b44d145a52374adf92d6c4f76b2d5416cf45a83e19e2a0fea6ea5aca9d7aac4dba70f54ba',
+00:51:04     INFO -  'L10NBASEDIR': '/Users/mozilla/workspace/mozharness/workspace/gecko-l10n',
+00:51:04     INFO -  'LANG': 'en_US.UTF-8',
+00:51:04     INFO -  'LC_CTYPE': 'en_US.UTF-8',
+00:51:04     INFO -  'LESS': '-R',
+00:51:04     INFO -  'LOGNAME': 'mozilla',
+00:51:04     INFO -  'LSCOLORS': 'Gxfxcxdxbxegedabagacad',
+00:51:04     INFO -  'LS_COLORS': 'no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:',
+00:51:04     INFO -  'MOZ_CHROME_MULTILOCALE': 'es-ES pl pt-BR',
+00:51:04     INFO -  'OLDPWD': '/Users/mozilla',
+00:51:04     INFO -  'PAGER': 'less',
+00:51:04     INFO -  'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin:/Users/mozilla/workspace/mozharness/workspace/compare-locales/scripts',
+00:51:04     INFO -  'PWD': '/Users/mozilla/workspace/mozharness',
+00:51:04     INFO -  'PYTHONPATH': ':/Users/mozilla/workspace/mozharness/workspace/compare-locales/lib',
+00:51:04     INFO -  'SHELL': '/bin/zsh',
+00:51:04     INFO -  'SHLVL': '1',
+00:51:04     INFO -  'SSH_AGENT_PID': '832',
+00:51:04     INFO -  'SSH_AUTH_SOCK': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T//ssh-cbdj7CXSj6ui/agent.830',
+00:51:04     INFO -  'TASKCLUSTER_AMQP_URL': 'amqp://rsrveqlh:P51PGxChA5MfeBoRVFeq3s_khDx1OCcA@red-crocodile.rmq.cloudamqp.com/rsrveqlh',
+00:51:04     INFO -  'TERM': 'xterm',
+00:51:04     INFO -  'TERM_PROGRAM': 'iTerm.app',
+00:51:04     INFO -  'TMPDIR': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T/',
+00:51:04     INFO -  'USER': 'mozilla',
+00:51:04     INFO -  'VISUAL': 'vim',
+00:51:04     INFO -  'ZSH': '/Users/mozilla/.oh-my-zsh',
+00:51:04     INFO -  'ZSH_THEME': 'lightsofapollo',
+00:51:04     INFO -  '_': '/Users/mozilla/workspace/mozharness/./scripts/b2g_build.py',
+00:51:04     INFO -  '__CF_USER_TEXT_ENCODING': '0x1F5:0:0',
+00:51:04     INFO -  '__CHECKFIX1436934': '1'}
+00:51:04     INFO -  including sdk/bash_completion/adb.bash
+00:51:04     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:04     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:04     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:05     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:06     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:06     INFO -  ============================================
+00:51:06     INFO -  PLATFORM_VERSION_CODENAME=AOSP
+00:51:06     INFO -  PLATFORM_VERSION=4.0.4.0.4.0.4
+00:51:06     INFO -  TARGET_PRODUCT=full
+00:51:06     INFO -  TARGET_BUILD_VARIANT=eng
+00:51:06     INFO -  TARGET_BUILD_TYPE=release
+00:51:06     INFO -  TARGET_BUILD_APPS=
+00:51:06     INFO -  TARGET_ARCH=arm
+00:51:06     INFO -  TARGET_ARCH_VARIANT=armv7-a
+00:51:06     INFO -  HOST_ARCH=x86
+00:51:06     INFO -  HOST_OS=darwin
+00:51:06     INFO -  HOST_OS_EXTRA=Darwin-13.1.0-x86_64-i386-64bit
+00:51:06     INFO -  HOST_BUILD_TYPE=release
+00:51:06     INFO -  BUILD_ID=OPENMASTER
+00:51:06     INFO -  OUT_DIR=out
+00:51:06     INFO -  ============================================
+00:51:07     INFO -  build/core/combo/HOST_darwin-x86.mk:42: ***********************************************************
+00:51:07     INFO -  build/core/combo/HOST_darwin-x86.mk:43: * No 10.6 or 10.5 SDK found, do you have Xcode installed? *
+00:51:07     INFO -  build/core/combo/HOST_darwin-x86.mk:44: ***********************************************************
+00:51:07     INFO -  ============================================
+00:51:07     INFO -  PLATFORM_VERSION_CODENAME=AOSP
+00:51:07     INFO -  PLATFORM_VERSION=4.0.4.0.4.0.4
+00:51:07     INFO -  TARGET_PRODUCT=full
+00:51:07     INFO -  TARGET_BUILD_VARIANT=eng
+00:51:07     INFO -  TARGET_BUILD_TYPE=release
+00:51:07     INFO -  TARGET_BUILD_APPS=
+00:51:07     INFO -  TARGET_ARCH=arm
+00:51:07     INFO -  TARGET_ARCH_VARIANT=armv7-a
+00:51:07     INFO -  HOST_ARCH=x86
+00:51:07     INFO -  HOST_OS=darwin
+00:51:07     INFO -  HOST_OS_EXTRA=Darwin-13.1.0-x86_64-i386-64bit
+00:51:07     INFO -  HOST_BUILD_TYPE=release
+00:51:07     INFO -  BUILD_ID=OPENMASTER
+00:51:07     INFO -  OUT_DIR=out
+00:51:07     INFO -  ============================================
+00:51:25     INFO -  CMake and NDK (/Users/mozilla/workspace/mozharness/workspace/prebuilt/ndk/android-ndk-r7) found, will compile apitrace
+00:51:25  WARNING -  external/apitrace/Android.mk:77: warning: overriding commands for target `out/target/product/generic/obj/SHARED_LIBRARIES/egltrace_intermediates/LINKED/egltrace.so'
+00:51:25  WARNING -  build/core/shared_library.mk:56: warning: ignoring old commands for target `out/target/product/generic/obj/SHARED_LIBRARIES/egltrace_intermediates/LINKED/egltrace.so'
+00:51:25  WARNING -  external/apitrace/Android.mk:82: warning: overriding commands for target `out/target/product/generic/system/lib/egltrace.so'
+00:51:25  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/system/lib/egltrace.so'
+00:51:25  WARNING -  external/apitrace/Android.mk:96: warning: overriding commands for target `out/target/product/generic/obj/EXECUTABLES/apitrace_intermediates/LINKED/apitrace'
+00:51:25  WARNING -  build/core/executable.mk:22: warning: ignoring old commands for target `out/target/product/generic/obj/EXECUTABLES/apitrace_intermediates/LINKED/apitrace'
+00:51:25  WARNING -  external/screencap-gonk/Android.mk:35: warning: overriding commands for target `out/target/product/generic/system/bin/screencap-gonk'
+00:51:25  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/system/bin/screencap-gonk'
+00:51:25     INFO -  find: ../../external/apache-http/src/org/apache/http: No such file or directory
+00:51:26     INFO -  find: ../../external/apache-http/src/org/apache/http: No such file or directory
+00:51:26     INFO -  find: ../../external/apache-http/src/org/apache/http: No such file or directory
+00:51:26     INFO -  find: ../../external/nist-sip/java: No such file or directory
+00:51:26     INFO -  find: ../../external/apache-http/src: No such file or directory
+00:51:26     INFO -  find: ../../external/libphonenumber/java/src: No such file or directory
+00:51:27  WARNING -  gaia/Android.mk:53: warning: overriding commands for target `out/target/product/generic/data/local/gaia'
+00:51:27  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/data/local/gaia'
+00:51:27  WARNING -  gonk-misc/Android.mk:30: warning: overriding commands for target `out/target/product/generic/obj/ETC/init.rc_intermediates/init.rc'
+00:51:27  WARNING -  build/core/prebuilt.mk:117: warning: ignoring old commands for target `out/target/product/generic/obj/ETC/init.rc_intermediates/init.rc'
+00:51:27  WARNING -  gonk-misc/Android.mk:137: warning: overriding commands for target `out/target/product/generic/obj/DATA/sources.xml_intermediates/sources.xml'
+00:51:27  WARNING -  build/core/prebuilt.mk:117: warning: ignoring old commands for target `out/target/product/generic/obj/DATA/sources.xml_intermediates/sources.xml'
+00:51:27  WARNING -  gonk-misc/Android.mk:199: warning: overriding commands for target `out/target/product/generic/system/gecko'
+00:51:27  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/system/gecko'
+00:51:27  WARNING -  gonk-misc/Android.mk:266: warning: overriding commands for target `out/target/product/generic/obj/DATA/gecko_intermediates/gecko'
+00:51:27  WARNING -  build/core/prebuilt.mk:117: warning: ignoring old commands for target `out/target/product/generic/obj/DATA/gecko_intermediates/gecko'
+00:51:28  WARNING -  build/core/Makefile:25: warning: overriding commands for target `out/target/product/generic/system/fonts/DroidSansEthiopic-Regular.ttf'
+00:51:28  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/system/fonts/DroidSansEthiopic-Regular.ttf'
+00:51:28  WARNING -  build/core/Makefile:25: warning: overriding commands for target `out/target/product/generic/system/fonts/DroidSansFallback.ttf'
+00:51:29  WARNING -  build/core/base_rules.mk:532: warning: ignoring old commands for target `out/target/product/generic/system/fonts/DroidSansFallback.ttf'
+00:51:29     INFO -  host Executable: aidl (out/host/darwin-x86/obj/EXECUTABLES/aidl_intermediates/aidl)
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/AaptAssets.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/Command.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/FileFinder.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/CrunchCache.cpp
+00:51:29     INFO -  host StaticLib: libhost (out/host/darwin-x86/obj/STATIC_LIBRARIES/libhost_intermediates/libhost.a)
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/Main.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/StringPool.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/Package.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/XMLNode.cpp
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/ResourceFilter.cpp
+00:51:29     INFO -  ld: warning: directory not found for option '-Lout/host/darwin-x86/obj/lib'
+00:51:29     INFO -  true
+00:51:29     INFO -  host C++: aapt <= frameworks/base/tools/aapt/ResourceTable.cpp
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/FileFinder.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/FileFinder.cpp:9:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/String8.h:22:
+00:51:29    ERROR -  frameworks/base/include/utils/Unicode.h:25:18: error: typedef redefinition with different types ('uint32_t' (aka 'unsigned int') vs 'char32_t')
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: note: previous definition is here
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/FileFinder.cpp:9:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/String8.h:22:
+00:51:29    ERROR -  frameworks/base/include/utils/Unicode.h:26:18: error: typedef redefinition with different types ('uint16_t' (aka 'unsigned short') vs 'char16_t')
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: note: previous definition is here
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  2 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/FileFinder.o] Error 1
+00:51:29     INFO -  make: *** Waiting for unfinished jobs....
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Main.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  4 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Main.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/ResourceFilter.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceFilter.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  4 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/ResourceFilter.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/StringPool.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  4 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/StringPool.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/AaptAssets.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.cpp:5:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.cpp:5:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.cpp:5:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/AaptAssets.h:10:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetManager.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/AssetDir.h:24:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/AaptAssets.cpp:2199:38: warning: unused parameter 'bundle' [-Wunused-parameter]
+00:51:29     INFO -  AaptAssets::slurpResourceZip(Bundle* bundle, const char* filename)
+00:51:29     INFO -                                       ^
+00:51:29     INFO -  1 warning and 4 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/AaptAssets.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Package.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Package.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Package.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Package.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Package.cpp:8:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:13:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/set:388:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2269:57: error: redefinition of 'std::__1::hash<char16_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned short>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2235:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char16_t>
+00:51:29     INFO -                                                          ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2285:57: error: redefinition of 'std::__1::hash<char32_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned int>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2243:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char32_t>
+00:51:29     INFO -                                                          ^
+00:51:29     INFO -  6 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Package.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/CrunchCache.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/CrunchCache.cpp:9:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/String8.h:22:
+00:51:29    ERROR -  frameworks/base/include/utils/Unicode.h:25:18: error: typedef redefinition with different types ('uint32_t' (aka 'unsigned int') vs 'char32_t')
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: note: previous definition is here
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/CrunchCache.cpp:9:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/String8.h:22:
+00:51:29    ERROR -  frameworks/base/include/utils/Unicode.h:26:18: error: typedef redefinition with different types ('uint16_t' (aka 'unsigned short') vs 'char16_t')
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: note: previous definition is here
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  2 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/CrunchCache.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Command.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Command.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Command.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Command.cpp:6:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Command.cpp:9:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:13:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/set:388:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2269:57: error: redefinition of 'std::__1::hash<char16_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned short>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2235:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char16_t>
+00:51:29     INFO -                                                          ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2285:57: error: redefinition of 'std::__1::hash<char32_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned int>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2243:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char32_t>
+00:51:29     INFO -                                                          ^
+00:51:29     INFO -  6 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/Command.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/XMLNode.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/XMLNode.h:11:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:13:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/set:388:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2269:57: error: redefinition of 'std::__1::hash<char16_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned short>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2235:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char16_t>
+00:51:29     INFO -                                                          ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2285:57: error: redefinition of 'std::__1::hash<char32_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned int>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2243:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char32_t>
+00:51:29     INFO -                                                          ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/XMLNode.cpp:183:36: warning: unused parameter 'bundle' [-Wunused-parameter]
+00:51:29     INFO -  status_t parseStyledString(Bundle* bundle,
+00:51:29     INFO -                                     ^
+00:51:29     INFO -  1 warning and 6 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/XMLNode.o] Error 1
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/expat/lib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/libpng'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I external/zlib'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I build/libs/host/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I frameworks/base/tools/aapt'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-I dalvik/libnativehelper/include/nativehelper'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem system/core/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/libhardware_legacy/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem hardware/ril/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem dalvik/libnativehelper/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/opengl/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem frameworks/base/native/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem external/skia/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem tools/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-isystem out/host/darwin-x86/obj/include'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-include system/core/include/arch/darwin-x86/AndroidConfig.h'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-U DEBUG'
+00:51:29     INFO -  clang: warning: argument unused during compilation: '-MF out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/ResourceTable.d'
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:226:20: error: typedef redefinition with different types ('char16_t' vs 'uint16_t' (aka 'unsigned short'))
+00:51:29     INFO -  typedef __char16_t char16_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:26:18: note: previous definition is here
+00:51:29     INFO -  typedef uint16_t char16_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:67:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__config:227:20: error: typedef redefinition with different types ('char32_t' vs 'uint32_t' (aka 'unsigned int'))
+00:51:29     INFO -  typedef __char32_t char32_t;
+00:51:29     INFO -                     ^
+00:51:29     INFO -  frameworks/base/include/utils/Unicode.h:25:18: note: previous definition is here
+00:51:29     INFO -  typedef uint32_t char32_t;
+00:51:29     INFO -                   ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/StringPool.h:10:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Main.h:13:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/Bundle.h:15:
+00:51:29     INFO -  In file included from frameworks/base/include/utils/Vector.h:20:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/new:68:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/exception:81:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:320:20: error: redefinition of 'std::__1::__is_integral<char16_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned short> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:316:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char16_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:322:20: error: redefinition of 'std::__1::__is_integral<char32_t>'
+00:51:29     INFO -  template <> struct __is_integral<unsigned int> : public true_type {};
+00:51:29     INFO -                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/type_traits:317:20: note: previous definition is here
+00:51:29     INFO -  template <> struct __is_integral<char32_t> : public true_type {};
+00:51:29     INFO -                     ^
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.cpp:7:
+00:51:29     INFO -  In file included from frameworks/base/tools/aapt/ResourceTable.h:13:
+00:51:29     INFO -  In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/set:388:
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2269:57: error: redefinition of 'std::__1::hash<char16_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned short>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2235:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char16_t>
+00:51:29     INFO -                                                          ^
+00:51:29    ERROR -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2285:57: error: redefinition of 'std::__1::hash<char32_t>'
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<unsigned int>
+00:51:29     INFO -                                                          ^~~~~~~~~~~~~~~~~~
+00:51:29     INFO -  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/functional:2243:57: note: previous definition is here
+00:51:29     INFO -  struct __attribute__ ((__type_visibility__("default"))) hash<char32_t>
+00:51:29     INFO -                                                          ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/ResourceTable.cpp:578:41: warning: unused parameter 'product' [-Wunused-parameter]
+00:51:29     INFO -                          const String16& product,
+00:51:29     INFO -                                          ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/ResourceTable.cpp:1700:53: warning: unused parameter 'isId' [-Wunused-parameter]
+00:51:29     INFO -                                   bool replace, bool isId)
+00:51:29     INFO -                                                      ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/ResourceTable.cpp:3118:66: warning: unused parameter 'package' [-Wunused-parameter]
+00:51:29     INFO -                                                   const String16& package)
+00:51:29     INFO -                                                                   ^
+00:51:29  WARNING -  frameworks/base/tools/aapt/ResourceTable.cpp:3184:47: warning: unused parameter 'bundle' [-Wunused-parameter]
+00:51:29     INFO -  ssize_t ResourceTable::Entry::flatten(Bundle* bundle, const sp<AaptFile>& data, bool isPublic)
+00:51:29     INFO -                                                ^
+00:51:29     INFO -  4 warnings and 6 errors generated.
+00:51:29     INFO -  make: *** [out/host/darwin-x86/obj/EXECUTABLES/aapt_intermediates/ResourceTable.o] Error 1
+00:51:29     INFO -  real	0m22.888s
+00:51:29     INFO -  user	0m7.037s
+00:51:29     INFO -  sys	0m14.798s
+00:51:29     INFO -  
+00:51:29     INFO -  > Build failed! <
+00:51:29     INFO -  Build with |./build.sh -j1| for better messages
+00:51:29     INFO -  If all else fails, use |rm -rf objdir-gecko| to clobber gecko and |rm -rf out| to clobber everything else.
+00:51:29    ERROR - Return code: 2
+00:51:29     INFO - Running command: ccache -s in /Users/mozilla/workspace/mozharness/workspace
+00:51:29     INFO - Using env: {'AWS_ACCESS_KEY_ID': 'AKIAJ2SW6QAFUU5Y5QOA',
+00:51:29     INFO -  'AWS_SECRET_ACCESS_KEY': '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',
+00:51:29     INFO -  'AZURE_STORAGE_ACCESS_KEY': '4deZv2G8hzgCe2pFbfdscDge0Xxh+LKg0j4GzVsKw2W5J4fR9RTn3wwGuVNfTSVn4bt6MP2aZdq03PBICyq9Fw==',
+00:51:29     INFO -  'AZURE_STORAGE_ACCOUNT': 'taskclusterlog',
+00:51:29     INFO -  'Apple_PubSub_Socket_Render': '/tmp/launch-wmxhHc/Render',
+00:51:29     INFO -  'B2G_UPDATER': '1',
+00:51:29     INFO -  'B2G_UPDATE_CHANNEL': 'emulator/default/default',
+00:51:29     INFO -  'CCACHE_BASEDIR': '/Users/mozilla/workspace/mozharness/workspace',
+00:51:29     INFO -  'COLORFGBG': '7;0',
+00:51:29     INFO -  'DIGITALOCEAN_API_KEY': 'f1657f0bb8aeafc2444833a3af1422a5',
+00:51:29     INFO -  'DIGITALOCEAN_CLIENT_ID': '3edfec0de7d3d0deeb1131f8c32ad581',
+00:51:29     INFO -  'DISPLAY': '/tmp/launch-SyJG5Y/org.macosforge.xquartz:0',
+00:51:29     INFO -  'DOCKER_HOST': '127.0.0.1:60236',
+00:51:29     INFO -  'EDITOR': 'vim',
+00:51:29     INFO -  'GH_TESTING_REPO': 'junkyard',
+00:51:29     INFO -  'GH_TESTING_TOKEN': 'ec6fc0b2b20ddb87fd3f90c1522d720c99c8dc93',
+00:51:29     INFO -  'GH_TESTING_USER': 'lightsofapollo-staging',
+00:51:29     INFO -  'GOPATH': '/Users/mozilla/go/',
+00:51:29     INFO -  'GREP_COLOR': '1;32',
+00:51:29     INFO -  'GREP_OPTIONS': '--color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn',
+00:51:29     INFO -  'HEROKU_API_TOKEN': '809f5af6-5f62-4602-b26a-253ffae70262',
+00:51:29     INFO -  'HOME': '/Users/mozilla',
+00:51:29     INFO -  'IRON_PROJECT_ID': '52f5cc322001c0000900001e',
+00:51:29     INFO -  'IRON_TOKEN': '82Rsh_3uJD9fj5QWoHSDqRDcn3k',
+00:51:29     INFO -  'KEENIO_PROJECT_ID': '52f7ec4173f4bb6ed3000002',
+00:51:29     INFO -  'KEENIO_READ_KEY': '71e436759a1b5d9ef767e583a0711450eeb1d8584324b5dde43bb156cf1d8db83212d98c2a864c481a605b002ccda0ad0a530f3b772e22b17a892307ee5329e3c4e91662f557f43e44dd6c27ffbcb20bae9f33eb716bcc5cadd8704821f985f4179c894f825f9a51d7769835caa9f0e5',
+00:51:29     INFO -  'KEENIO_WRITE_KEY': '156d09fd6119f770847972cb77a5a321703f42a39ff63642e10fecf00c6feb1c5985bbc7b92cb488a4c5b9b3929a148e212e204df62dc01d84a34d20b0794b6a9a523ac05c638fd8a7bbf87b44d145a52374adf92d6c4f76b2d5416cf45a83e19e2a0fea6ea5aca9d7aac4dba70f54ba',
+00:51:29     INFO -  'L10NBASEDIR': '/Users/mozilla/workspace/mozharness/workspace/gecko-l10n',
+00:51:29     INFO -  'LANG': 'en_US.UTF-8',
+00:51:29     INFO -  'LC_CTYPE': 'en_US.UTF-8',
+00:51:29     INFO -  'LESS': '-R',
+00:51:29     INFO -  'LOGNAME': 'mozilla',
+00:51:29     INFO -  'LSCOLORS': 'Gxfxcxdxbxegedabagacad',
+00:51:29     INFO -  'LS_COLORS': 'no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:',
+00:51:29     INFO -  'MOZ_CHROME_MULTILOCALE': 'es-ES pl pt-BR',
+00:51:29     INFO -  'OLDPWD': '/Users/mozilla',
+00:51:29     INFO -  'PAGER': 'less',
+00:51:29     INFO -  'PATH': '/usr/local/heroku/bin:/usr/local/packer:/usr/local/Cellar/ruby/1.9.3-p125/bin:/usr/local/n/current/bin/:/Applications/FirefoxNightly.app/Contents/MacOS/:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/Users/mozilla/bin:/usr/local/zend/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/mysql/bin:/Users/mozilla/bin:/Users/mozilla/workspace/short/bin:/Users/mozilla/workspace/mozharness/workspace/compare-locales/scripts',
+00:51:29     INFO -  'PWD': '/Users/mozilla/workspace/mozharness',
+00:51:29     INFO -  'PYTHONPATH': ':/Users/mozilla/workspace/mozharness/workspace/compare-locales/lib',
+00:51:29     INFO -  'SHELL': '/bin/zsh',
+00:51:29     INFO -  'SHLVL': '1',
+00:51:29     INFO -  'SSH_AGENT_PID': '832',
+00:51:29     INFO -  'SSH_AUTH_SOCK': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T//ssh-cbdj7CXSj6ui/agent.830',
+00:51:29     INFO -  'TASKCLUSTER_AMQP_URL': 'amqp://rsrveqlh:P51PGxChA5MfeBoRVFeq3s_khDx1OCcA@red-crocodile.rmq.cloudamqp.com/rsrveqlh',
+00:51:29     INFO -  'TERM': 'xterm',
+00:51:29     INFO -  'TERM_PROGRAM': 'iTerm.app',
+00:51:29     INFO -  'TMPDIR': '/var/folders/5l/r2z_ktdn2379c43hkln0mx1r0000gn/T/',
+00:51:29     INFO -  'USER': 'mozilla',
+00:51:29     INFO -  'VISUAL': 'vim',
+00:51:29     INFO -  'ZSH': '/Users/mozilla/.oh-my-zsh',
+00:51:29     INFO -  'ZSH_THEME': 'lightsofapollo',
+00:51:29     INFO -  '_': '/Users/mozilla/workspace/mozharness/./scripts/b2g_build.py',
+00:51:29     INFO -  '__CF_USER_TEXT_ENCODING': '0x1F5:0:0',
+00:51:29     INFO -  '__CHECKFIX1436934': '1'}
+00:51:29     INFO -  cache directory                     /Users/mozilla/.ccache
+00:51:29     INFO -  cache hit (direct)                     0
+00:51:29     INFO -  cache hit (preprocessed)               0
+00:51:29     INFO -  cache miss                             0
+00:51:29     INFO -  called for link                        1
+00:51:29     INFO -  compile failed                        10
+00:51:29     INFO -  files in cache                        24
+00:51:29     INFO -  cache size                           1.9 Mbytes
+00:51:29     INFO -  max cache size                     988.4 Mbytes
+00:51:29     INFO - Return code: 0
+00:51:29    FATAL - failed to build
+00:51:29    FATAL - Running post_fatal callback...
+00:51:29    FATAL - Exiting 2

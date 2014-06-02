@@ -1,6 +1,8 @@
 FROM          registry.taskcluster.net/jonasfj/gecko-base
 MAINTAINER    Jonas Finnemann Jensen <jopsen@gmail.com>
 
+USER          worker
+
 # Add utilities and configuration
 ADD           mozconfigs/           /home/worker/mozconfigs/
 ADD           build.sh              /home/worker/build.sh
